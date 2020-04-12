@@ -870,6 +870,11 @@ public class PatientDetailsActivity extends BaseActivity implements DatePickerFr
             }
 
         }
+
+        if (selectedgender == 0) {
+            Toast.makeText(YelligoApplication.getContext(), "Please select gender", Toast.LENGTH_LONG).show();
+            return false;
+        }
         if (TextUtils.isEmpty(etAge.getText().toString())) {
             Toast.makeText(YelligoApplication.getContext(), "Please enter Age", Toast.LENGTH_LONG).show();
             return false;
@@ -901,10 +906,7 @@ public class PatientDetailsActivity extends BaseActivity implements DatePickerFr
             return false;
         }
 
-        if (selectedgender == 0) {
-            Toast.makeText(YelligoApplication.getContext(), "Please select gender", Toast.LENGTH_LONG).show();
-            return false;
-        }
+
         if (district_code == 0) {
             Toast.makeText(YelligoApplication.getContext(), "Please select District", Toast.LENGTH_LONG).show();
             return false;
@@ -914,7 +916,7 @@ public class PatientDetailsActivity extends BaseActivity implements DatePickerFr
             return false;
         }
 
-        if (TextUtils.isEmpty(etPoorigin.getText().toString())) {
+       /* if (TextUtils.isEmpty(etPoorigin.getText().toString())) {
             Toast.makeText(YelligoApplication.getContext(), "Please enter Port of Origin", Toast.LENGTH_LONG).show();
             return false;
         }
@@ -922,9 +924,9 @@ public class PatientDetailsActivity extends BaseActivity implements DatePickerFr
         if (TextUtils.isEmpty(etPoarrival.getText().toString())) {
             Toast.makeText(YelligoApplication.getContext(), "Please enter Port Of Arrival", Toast.LENGTH_LONG).show();
             return false;
-        }
+        }*/
 
-        if (TextUtils.isEmpty(etStreet.getText().toString())) {
+        /*if (TextUtils.isEmpty(etStreet.getText().toString())) {
             Toast.makeText(YelligoApplication.getContext(), "Please enter Street Name", Toast.LENGTH_LONG).show();
             return false;
         }
@@ -935,12 +937,12 @@ public class PatientDetailsActivity extends BaseActivity implements DatePickerFr
         if (TextUtils.isEmpty(etHouseno.getText().toString())) {
             Toast.makeText(YelligoApplication.getContext(), "Please enter House Number", Toast.LENGTH_LONG).show();
             return false;
-        }
+        }*/
 
-        if (TextUtils.isEmpty(etCity.getText().toString())) {
+        /*if (TextUtils.isEmpty(etCity.getText().toString())) {
             Toast.makeText(YelligoApplication.getContext(), "Please enter City Name", Toast.LENGTH_LONG).show();
             return false;
-        }
+        }*/
 
         return true;
     }

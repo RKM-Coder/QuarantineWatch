@@ -3,6 +3,7 @@ package com.goalsr.homequarantineTracker.apiservice;
 import android.content.Context;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
+import android.os.Handler;
 import android.util.Log;
 
 import com.goalsr.homequarantineTracker.BuildConfig;
@@ -218,8 +219,14 @@ public class NetworkService {
                         if (response.body().size()>0){
                             Log.e("PatientList--", response.body().size()+"");
                             insertTODB(response.body());
+                            final Handler handler = new Handler();
+                            handler.postDelayed(new Runnable() {
+                                @Override
+                                public void run() {
+                                    listener.onSuccess(response.body().get(0),true);
+                                }
+                            }, 1200);
 
-                            listener.onSuccess(response.body().get(0),true);
                         }else {
                             listener.onFailure("No result found");
                         }
@@ -289,7 +296,14 @@ public class NetworkService {
                     if (listener !=null){
                         if (response.body().size()>0){
                             patientFamilyinfoRepository.insert(response.body());
-                            listener.onSuccess(response.body().get(0),true);
+                            final Handler handler = new Handler();
+                            handler.postDelayed(new Runnable() {
+                                @Override
+                                public void run() {
+                                    listener.onSuccess(response.body().get(0),true);
+                                }
+                            }, 1000);
+
                         }else {
                             listener.onFailure("");
                         }

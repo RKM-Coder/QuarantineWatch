@@ -188,6 +188,14 @@ public class LoginActivity extends BaseActivity {
                             reqforPI();
                         }
                     }else {
+
+                        PreferenceStore.getPrefernceHelperInstace().clearValue(YelligoApplication.getContext(),PreferenceStore.ISUPDATEPATENTINFO);
+                        PreferenceStore.getPrefernceHelperInstace().clearValue(YelligoApplication.getContext(),PreferenceStore.USER_PHONE);
+                        PreferenceStore.getPrefernceHelperInstace().clearValue(YelligoApplication.getContext(),PreferenceStore.USER_ID);
+                        PreferenceStore.getPrefernceHelperInstace().clearValue(YelligoApplication.getContext(),PreferenceStore.DISTRICT_NAME);
+                        PreferenceStore.getPrefernceHelperInstace().clearValue(YelligoApplication.getContext(),PreferenceStore.DISTRICT_ID);
+                        getPatientinfoRepository().clear();
+                        getPatientFamillyinfoRepository().clear();
                         showProgressDialogStatic();
 
                         reqforPI();
@@ -231,8 +239,10 @@ public class LoginActivity extends BaseActivity {
                             // Toast.makeText(getActivity(),"Customer created successfully",Toast.LENGTH_SHORT).show();
                             PreferenceStore.getPrefernceHelperInstace().clearValue(YelligoApplication.getContext(),PreferenceStore.ISUPDATEPATENTINFO);
                             PreferenceStore.getPrefernceHelperInstace().clearValue(YelligoApplication.getContext(),PreferenceStore.USER_PHONE);
+                            PreferenceStore.getPrefernceHelperInstace().clearValue(YelligoApplication.getContext(),PreferenceStore.DISTRICT_NAME);
+                            PreferenceStore.getPrefernceHelperInstace().clearValue(YelligoApplication.getContext(),PreferenceStore.DISTRICT_ID);
                             getPatientinfoRepository().clear();
-                            getPatientinfoRepository().clear();
+                            getPatientFamillyinfoRepository().clear();
                             showProgressDialogStatic();
 
                             reqforPI();

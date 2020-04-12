@@ -375,6 +375,7 @@ public class PatientFamillyActivity extends BaseActivity implements DatePickerFr
                         etStreet.setEnabled(false);
                     }
                     if (resPatientInfobasic.getCity() != null) {
+                        etCity.setText("" + resPatientInfo.getCity());
                         etCity.setEnabled(false);
                     }
                     district_code=resPatientInfobasic.getDistrictCode();
@@ -464,6 +465,7 @@ public class PatientFamillyActivity extends BaseActivity implements DatePickerFr
                         etStreet.setEnabled(false);
                     }
                     if (resPatientInfobasic.getCity() != null) {
+                        etCity.setText("" + resPatientInfo.getCity());
                         etCity.setEnabled(false);
                     }
                     district_code=resPatientInfobasic.getDistrictCode();

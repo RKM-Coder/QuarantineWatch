@@ -18,7 +18,7 @@ import androidx.appcompat.widget.Toolbar;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.amitshekhar.DebugDB;
+//import com.amitshekhar.DebugDB;
 import com.goalsr.homequarantineTracker.R;
 import com.goalsr.homequarantineTracker.Utils.PreferenceStore;
 import com.goalsr.homequarantineTracker.YelligoApplication;
@@ -78,7 +78,7 @@ public class DistrictListActivity extends BaseActivity implements DistrictListAd
         initMvp();
         initrecyclerView();
         getDistrict();
-        Log.e("DBaddress", DebugDB.getAddressLog());
+       // Log.e("DBaddress", DebugDB.getAddressLog());
         etSearchview.addTextChangedListener(new TextWatcher() {
 
             @Override

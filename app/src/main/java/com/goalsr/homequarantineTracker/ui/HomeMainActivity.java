@@ -78,6 +78,11 @@ public class HomeMainActivity extends BaseActivity implements FamillyListAdapter
         RecyclerView.LayoutManager manager = new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false);
         rvViewFamillly.setLayoutManager(manager);
         rvViewFamillly.setAdapter(adapter);
+        if (PreferenceStore.getPrefernceHelperInstace().getIntValue(YelligoApplication.getContext(),PreferenceStore.ROLL_ID)==2){
+            tvLogout.setVisibility(View.GONE);
+        }else {
+            tvLogout.setVisibility(View.VISIBLE);
+        }
 
 
     }
@@ -330,6 +335,28 @@ public class HomeMainActivity extends BaseActivity implements FamillyListAdapter
         bundle.putString("key","family");
         bundle.putInt("v_id",item.getCitizenFamilyPersonId());
         getCommonApi().openNewScreen(PatientSymtomUpdateActivity.class,bundle);
+
+    }
+
+    @Override
+    public void onBackPressed() {
+
+
+        if (PreferenceStore.getPrefernceHelperInstace().getIntValue(YelligoApplication.getContext(),PreferenceStore.ROLL_ID)!=2) {
+
+            new AlertDialog.Builder(this)
+                    .setMessage("Are you sure you want to exit?")
+                    .setCancelable(false)
+                    .setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+                        public void onClick(DialogInterface dialog, int id) {
+                            HomeMainActivity.super.onBackPressed();
+                        }
+                    })
+                    .setNegativeButton("No", null)
+                    .show();
+        }else {
+            super.onBackPressed();
+        }
 
     }
 }

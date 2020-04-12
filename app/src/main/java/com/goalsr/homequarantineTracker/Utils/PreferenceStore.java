@@ -33,6 +33,7 @@ public class PreferenceStore {
     public static final String ETAGCOUNTRY = "Etagcountry";
     public static final String USER_EMAIL = "email";
     public static final String USER_PHONE = "phone";
+    public static final String USER_PHONE_next = "phone_next";
     public static final String USER_NAME = "name";
 
     public static final String USER_LATITUDE = "current_user_latitude";

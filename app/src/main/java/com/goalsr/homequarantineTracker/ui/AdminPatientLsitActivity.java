@@ -1,5 +1,6 @@
 package com.goalsr.homequarantineTracker.ui;
 
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.text.Editable;
@@ -13,6 +14,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.widget.Toolbar;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -253,6 +255,7 @@ public class AdminPatientLsitActivity extends BaseActivity implements PatientLis
     @Override
     public void onItemCheckedFamilly(int position, ResPatientInfo item) {
         if (item.getCitizenID() > 0) {
+            getPatientFamillyinfoRepository().clear();
             PreferenceStore.getPrefernceHelperInstace().setIntValue(YelligoApplication.getContext(), PreferenceStore.USER_ID, item.getCitizenID());
             Intent intent = new Intent(getApplicationContext(), HomeMainActivity.class);
             /*intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_NEW_TASK);*/
@@ -297,5 +300,22 @@ public class AdminPatientLsitActivity extends BaseActivity implements PatientLis
                 finish();
                 break;
         }
+    }
+    boolean doubleBackToExitPressedOnce = false;
+    @Override
+    public void onBackPressed() {
+        //super.onBackPressed();
+
+        new AlertDialog.Builder(this)
+                .setMessage("Are you sure you want to exit?")
+                .setCancelable(false)
+                .setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int id) {
+                        AdminPatientLsitActivity.super.onBackPressed();
+                    }
+                })
+                .setNegativeButton("No", null)
+                .show();
+
     }
 }
