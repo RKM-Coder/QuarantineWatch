@@ -1,0 +1,1220 @@
+[
+    {
+        "TALUKA_NAME": "Afzalpur",
+        "TALUKA_CODE": 2,
+        "district_code": 4,
+        "DISTRICT_NAME": "Gulbarga"
+    },
+    {
+        "TALUKA_NAME": "Aland",
+        "TALUKA_CODE": 1,
+        "district_code": 4,
+        "DISTRICT_NAME": "Gulbarga"
+    },
+    {
+        "TALUKA_NAME": "Alur",
+        "TALUKA_CODE": 5,
+        "district_code": 23,
+        "DISTRICT_NAME": "Hassan"
+    },
+    {
+        "TALUKA_NAME": "Anekal",
+        "TALUKA_CODE": 3,
+        "district_code": 20,
+        "DISTRICT_NAME": "Bangalore Urban"
+    },
+    {
+        "TALUKA_NAME": "Ankola",
+        "TALUKA_CODE": 7,
+        "district_code": 10,
+        "DISTRICT_NAME": "Uttar Kannada"
+    },
+    {
+        "TALUKA_NAME": "Arkalgud",
+        "TALUKA_CODE": 6,
+        "district_code": 23,
+        "DISTRICT_NAME": "Hassan"
+    },
+    {
+        "TALUKA_NAME": "Arsikere",
+        "TALUKA_CODE": 3,
+        "district_code": 23,
+        "DISTRICT_NAME": "Hassan"
+    },
+    {
+        "TALUKA_NAME": "Athani",
+        "TALUKA_CODE": 2,
+        "district_code": 1,
+        "DISTRICT_NAME": "Belgaum"
+    },
+    {
+        "TALUKA_NAME": "Aurad",
+        "TALUKA_CODE": 3,
+        "district_code": 5,
+        "DISTRICT_NAME": "Bidar"
+    },
+    {
+        "TALUKA_NAME": "Babalesvara",
+        "TALUKA_CODE": 7,
+        "district_code": 3,
+        "DISTRICT_NAME": "Bijapur"
+    },
+    {
+        "TALUKA_NAME": "Badami",
+        "TALUKA_CODE": 4,
+        "district_code": 2,
+        "DISTRICT_NAME": "Bagalkote"
+    },
+    {
+        "TALUKA_NAME": "Bagalkote",
+        "TALUKA_CODE": 5,
+        "district_code": 2,
+        "DISTRICT_NAME": "Bagalkote"
+    },
+    {
+        "TALUKA_NAME": "Bagepalli",
+        "TALUKA_CODE": 4,
+        "district_code": 28,
+        "DISTRICT_NAME": "Chikkaballapur"
+    },
+    {
+        "TALUKA_NAME": "Bailhongal",
+        "TALUKA_CODE": 9,
+        "district_code": 1,
+        "DISTRICT_NAME": "Belgaum"
+    },
+    {
+        "TALUKA_NAME": "Bangalore North(Additional)",
+        "TALUKA_CODE": 5,
+        "district_code": 20,
+        "DISTRICT_NAME": "Bangalore Urban"
+    },
+    {
+        "TALUKA_NAME": "Bangalore East",
+        "TALUKA_CODE": 4,
+        "district_code": 20,
+        "DISTRICT_NAME": "Bangalore Urban"
+    },
+    {
+        "TALUKA_NAME": "Bangalore North",
+        "TALUKA_CODE": 1,
+        "district_code": 20,
+        "DISTRICT_NAME": "Bangalore Urban"
+    },
+    {
+        "TALUKA_NAME": "Bangalore South",
+        "TALUKA_CODE": 2,
+        "district_code": 20,
+        "DISTRICT_NAME": "Bangalore Urban"
+    },
+    {
+        "TALUKA_NAME": "Bangarpet",
+        "TALUKA_CODE": 10,
+        "district_code": 19,
+        "DISTRICT_NAME": "Kolar"
+    },
+    {
+        "TALUKA_NAME": "Bantwal",
+        "TALUKA_CODE": 2,
+        "district_code": 24,
+        "DISTRICT_NAME": "Dakshina Kannada"
+    },
+    {
+        "TALUKA_NAME": "Basavakalyan",
+        "TALUKA_CODE": 1,
+        "district_code": 5,
+        "DISTRICT_NAME": "Bidar"
+    },
+    {
+        "TALUKA_NAME": "Basavan Bagewadi",
+        "TALUKA_CODE": 4,
+        "district_code": 3,
+        "DISTRICT_NAME": "Bijapur"
+    },
+    {
+        "TALUKA_NAME": "Belgaum",
+        "TALUKA_CODE": 6,
+        "district_code": 1,
+        "DISTRICT_NAME": "Belgaum"
+    },
+    {
+        "TALUKA_NAME": "Bellary",
+        "TALUKA_CODE": 5,
+        "district_code": 12,
+        "DISTRICT_NAME": "Bellary"
+    },
+    {
+        "TALUKA_NAME": "Belthangady",
+        "TALUKA_CODE": 3,
+        "district_code": 24,
+        "DISTRICT_NAME": "Dakshina Kannada"
+    },
+    {
+        "TALUKA_NAME": "Belur",
+        "TALUKA_CODE": 2,
+        "district_code": 23,
+        "DISTRICT_NAME": "Hassan"
+    },
+    {
+        "TALUKA_NAME": "Bhadravathi",
+        "TALUKA_CODE": 7,
+        "district_code": 15,
+        "DISTRICT_NAME": "Shimoga"
+    },
+    {
+        "TALUKA_NAME": "Bhalki",
+        "TALUKA_CODE": 2,
+        "district_code": 5,
+        "DISTRICT_NAME": "Bidar"
+    },
+    {
+        "TALUKA_NAME": "Bhatkal",
+        "TALUKA_CODE": 11,
+        "district_code": 10,
+        "DISTRICT_NAME": "Uttar Kannada"
+    },
+    {
+        "TALUKA_NAME": "Bidar",
+        "TALUKA_CODE": 4,
+        "district_code": 5,
+        "DISTRICT_NAME": "Bidar"
+    },
+    {
+        "TALUKA_NAME": "Bijapur",
+        "TALUKA_CODE": 1,
+        "district_code": 3,
+        "DISTRICT_NAME": "Bijapur"
+    },
+    {
+        "TALUKA_NAME": "Bilagi",
+        "TALUKA_CODE": 2,
+        "district_code": 2,
+        "DISTRICT_NAME": "Bagalkote"
+    },
+    {
+        "TALUKA_NAME": "Bramhavara",
+        "TALUKA_CODE": 5,
+        "district_code": 16,
+        "DISTRICT_NAME": "Udupi"
+    },
+    {
+        "TALUKA_NAME": "Byadagi",
+        "TALUKA_CODE": 5,
+        "district_code": 11,
+        "DISTRICT_NAME": "Haveri"
+    },
+    {
+        "TALUKA_NAME": "Byndur",
+        "TALUKA_CODE": 4,
+        "district_code": 16,
+        "DISTRICT_NAME": "Udupi"
+    },
+    {
+        "TALUKA_NAME": "Chadachana",
+        "TALUKA_CODE": 8,
+        "district_code": 3,
+        "DISTRICT_NAME": "Bijapur"
+    },
+    {
+        "TALUKA_NAME": "Challakere",
+        "TALUKA_CODE": 2,
+        "district_code": 13,
+        "DISTRICT_NAME": "Chitradurga"
+    },
+    {
+        "TALUKA_NAME": "Chamarajanagara",
+        "TALUKA_CODE": 2,
+        "district_code": 27,
+        "DISTRICT_NAME": "Chamarajanagara"
+    },
+    {
+        "TALUKA_NAME": "Channagiri",
+        "TALUKA_CODE": 6,
+        "district_code": 14,
+        "DISTRICT_NAME": "Davanagere"
+    },
+    {
+        "TALUKA_NAME": "Channapatna",
+        "TALUKA_CODE": 3,
+        "district_code": 29,
+        "DISTRICT_NAME": "Ramanagara"
+    },
+    {
+        "TALUKA_NAME": "Channarayapatna",
+        "TALUKA_CODE": 8,
+        "district_code": 23,
+        "DISTRICT_NAME": "Hassan"
+    },
+    {
+        "TALUKA_NAME": "Chikballapur",
+        "TALUKA_CODE": 2,
+        "district_code": 28,
+        "DISTRICT_NAME": "Chikkaballapur"
+    },
+    {
+        "TALUKA_NAME": "Chikkodi",
+        "TALUKA_CODE": 1,
+        "district_code": 1,
+        "DISTRICT_NAME": "Belgaum"
+    },
+    {
+        "TALUKA_NAME": "Chikmagalur",
+        "TALUKA_CODE": 6,
+        "district_code": 17,
+        "DISTRICT_NAME": "Chikmagalur"
+    },
+    {
+        "TALUKA_NAME": "Chiknayakanahalli",
+        "TALUKA_CODE": 1,
+        "district_code": 18,
+        "DISTRICT_NAME": "Tumkur"
+    },
+    {
+        "TALUKA_NAME": "Chincholi",
+        "TALUKA_CODE": 4,
+        "district_code": 4,
+        "DISTRICT_NAME": "Gulbarga"
+    },
+    {
+        "TALUKA_NAME": "Chinthamani",
+        "TALUKA_CODE": 6,
+        "district_code": 28,
+        "DISTRICT_NAME": "Chikkaballapur"
+    },
+    {
+        "TALUKA_NAME": "Chitaguppa",
+        "TALUKA_CODE": 6,
+        "district_code": 5,
+        "DISTRICT_NAME": "Bidar"
+    },
+    {
+        "TALUKA_NAME": "Chitradurga",
+        "TALUKA_CODE": 3,
+        "district_code": 13,
+        "DISTRICT_NAME": "Chitradurga"
+    },
+    {
+        "TALUKA_NAME": "Chittapur",
+        "TALUKA_CODE": 6,
+        "district_code": 4,
+        "DISTRICT_NAME": "Gulbarga"
+    },
+    {
+        "TALUKA_NAME": "Davanagere",
+        "TALUKA_CODE": 4,
+        "district_code": 14,
+        "DISTRICT_NAME": "Davanagere"
+    },
+    {
+        "TALUKA_NAME": "Devanahalli",
+        "TALUKA_CODE": 3,
+        "district_code": 21,
+        "DISTRICT_NAME": "Bangalore Rural"
+    },
+    {
+        "TALUKA_NAME": "Devdurga",
+        "TALUKA_CODE": 2,
+        "district_code": 6,
+        "DISTRICT_NAME": "Raichur"
+    },
+    {
+        "TALUKA_NAME": "Dharwad",
+        "TALUKA_CODE": 1,
+        "district_code": 9,
+        "DISTRICT_NAME": "Dharwad"
+    },
+    {
+        "TALUKA_NAME": "Doddaballapura",
+        "TALUKA_CODE": 2,
+        "district_code": 21,
+        "DISTRICT_NAME": "Bangalore Rural"
+    },
+    {
+        "TALUKA_NAME": "Gadag",
+        "TALUKA_CODE": 3,
+        "district_code": 8,
+        "DISTRICT_NAME": "Gadag"
+    },
+    {
+        "TALUKA_NAME": "Gajendragad",
+        "TALUKA_CODE": 6,
+        "district_code": 8,
+        "DISTRICT_NAME": "Gadag"
+    },
+    {
+        "TALUKA_NAME": "Gangavathi",
+        "TALUKA_CODE": 3,
+        "district_code": 7,
+        "DISTRICT_NAME": "Koppal"
+    },
+    {
+        "TALUKA_NAME": "Gauribidanur",
+        "TALUKA_CODE": 1,
+        "district_code": 28,
+        "DISTRICT_NAME": "Chikkaballapur"
+    },
+    {
+        "TALUKA_NAME": "Gokak",
+        "TALUKA_CODE": 4,
+        "district_code": 1,
+        "DISTRICT_NAME": "Belgaum"
+    },
+    {
+        "TALUKA_NAME": "Gubbi",
+        "TALUKA_CODE": 7,
+        "district_code": 18,
+        "DISTRICT_NAME": "Tumkur"
+    },
+    {
+        "TALUKA_NAME": "Gudibande",
+        "TALUKA_CODE": 3,
+        "district_code": 28,
+        "DISTRICT_NAME": "Chikkaballapur"
+    },
+    {
+        "TALUKA_NAME": "Gulbarga",
+        "TALUKA_CODE": 3,
+        "district_code": 4,
+        "DISTRICT_NAME": "Gulbarga"
+    },
+    {
+        "TALUKA_NAME": "Gulbarga North",
+        "TALUKA_CODE": 12,
+        "district_code": 4,
+        "DISTRICT_NAME": "Gulbarga"
+    },
+    {
+        "TALUKA_NAME": "Guledagudda",
+        "TALUKA_CODE": 7,
+        "district_code": 2,
+        "DISTRICT_NAME": "Bagalkote"
+    },
+    {
+        "TALUKA_NAME": "Gundlupet",
+        "TALUKA_CODE": 1,
+        "district_code": 27,
+        "DISTRICT_NAME": "Chamarajanagara"
+    },
+    {
+        "TALUKA_NAME": "Gurumitakala",
+        "TALUKA_CODE": 4,
+        "district_code": 30,
+        "DISTRICT_NAME": "Yadagir"
+    },
+    {
+        "TALUKA_NAME": "Hadagali",
+        "TALUKA_CODE": 1,
+        "district_code": 12,
+        "DISTRICT_NAME": "Bellary"
+    },
+    {
+        "TALUKA_NAME": "Hagaribommanahalli",
+        "TALUKA_CODE": 2,
+        "district_code": 12,
+        "DISTRICT_NAME": "Bellary"
+    },
+    {
+        "TALUKA_NAME": "Haliyal",
+        "TALUKA_CODE": 3,
+        "district_code": 10,
+        "DISTRICT_NAME": "Uttar Kannada"
+    },
+    {
+        "TALUKA_NAME": "Hangal",
+        "TALUKA_CODE": 3,
+        "district_code": 11,
+        "DISTRICT_NAME": "Haveri"
+    },
+    {
+        "TALUKA_NAME": "Harapanahalli",
+        "TALUKA_CODE": 2,
+        "district_code": 14,
+        "DISTRICT_NAME": "Davanagere"
+    },
+    {
+        "TALUKA_NAME": "Harihar",
+        "TALUKA_CODE": 1,
+        "district_code": 14,
+        "DISTRICT_NAME": "Davanagere"
+    },
+    {
+        "TALUKA_NAME": "Hassan",
+        "TALUKA_CODE": 4,
+        "district_code": 23,
+        "DISTRICT_NAME": "Hassan"
+    },
+    {
+        "TALUKA_NAME": "Haveri",
+        "TALUKA_CODE": 4,
+        "district_code": 11,
+        "DISTRICT_NAME": "Haveri"
+    },
+    {
+        "TALUKA_NAME": "Heggadadevanakote",
+        "TALUKA_CODE": 5,
+        "district_code": 26,
+        "DISTRICT_NAME": "Mysore"
+    },
+    {
+        "TALUKA_NAME": "Hirekerur",
+        "TALUKA_CODE": 6,
+        "district_code": 11,
+        "DISTRICT_NAME": "Haveri"
+    },
+    {
+        "TALUKA_NAME": "Hiriyur",
+        "TALUKA_CODE": 6,
+        "district_code": 13,
+        "DISTRICT_NAME": "Chitradurga"
+    },
+    {
+        "TALUKA_NAME": "Holalkere",
+        "TALUKA_CODE": 4,
+        "district_code": 13,
+        "DISTRICT_NAME": "Chitradurga"
+    },
+    {
+        "TALUKA_NAME": "Holenarasipura",
+        "TALUKA_CODE": 7,
+        "district_code": 23,
+        "DISTRICT_NAME": "Hassan"
+    },
+    {
+        "TALUKA_NAME": "Honnali",
+        "TALUKA_CODE": 5,
+        "district_code": 14,
+        "DISTRICT_NAME": "Davanagere"
+    },
+    {
+        "TALUKA_NAME": "Honnavar",
+        "TALUKA_CODE": 10,
+        "district_code": 10,
+        "DISTRICT_NAME": "Uttar Kannada"
+    },
+    {
+        "TALUKA_NAME": "Hosadurga",
+        "TALUKA_CODE": 5,
+        "district_code": 13,
+        "DISTRICT_NAME": "Chitradurga"
+    },
+    {
+        "TALUKA_NAME": "Hosanagar",
+        "TALUKA_CODE": 4,
+        "district_code": 15,
+        "DISTRICT_NAME": "Shimoga"
+    },
+    {
+        "TALUKA_NAME": "Hoskote",
+        "TALUKA_CODE": 4,
+        "district_code": 21,
+        "DISTRICT_NAME": "Bangalore Rural"
+    },
+    {
+        "TALUKA_NAME": "Hospet",
+        "TALUKA_CODE": 3,
+        "district_code": 12,
+        "DISTRICT_NAME": "Bellary"
+    },
+    {
+        "TALUKA_NAME": "Hubli",
+        "TALUKA_CODE": 3,
+        "district_code": 9,
+        "DISTRICT_NAME": "Dharwad"
+    },
+    {
+        "TALUKA_NAME": "Hukkeri",
+        "TALUKA_CODE": 5,
+        "district_code": 1,
+        "DISTRICT_NAME": "Belgaum"
+    },
+    {
+        "TALUKA_NAME": "Humnabad",
+        "TALUKA_CODE": 5,
+        "district_code": 5,
+        "DISTRICT_NAME": "Bidar"
+    },
+    {
+        "TALUKA_NAME": "Hungund",
+        "TALUKA_CODE": 6,
+        "district_code": 2,
+        "DISTRICT_NAME": "Bagalkote"
+    },
+    {
+        "TALUKA_NAME": "Hunisigi",
+        "TALUKA_CODE": 6,
+        "district_code": 30,
+        "DISTRICT_NAME": "Yadagir"
+    },
+    {
+        "TALUKA_NAME": "Hunsur",
+        "TALUKA_CODE": 2,
+        "district_code": 26,
+        "DISTRICT_NAME": "Mysore"
+    },
+    {
+        "TALUKA_NAME": "Ilkal",
+        "TALUKA_CODE": 8,
+        "district_code": 2,
+        "DISTRICT_NAME": "Bagalkote"
+    },
+    {
+        "TALUKA_NAME": "Indi",
+        "TALUKA_CODE": 2,
+        "district_code": 3,
+        "DISTRICT_NAME": "Bijapur"
+    },
+    {
+        "TALUKA_NAME": "Jagalur",
+        "TALUKA_CODE": 3,
+        "district_code": 14,
+        "DISTRICT_NAME": "Davanagere"
+    },
+    {
+        "TALUKA_NAME": "Jamakhandi",
+        "TALUKA_CODE": 1,
+        "district_code": 2,
+        "DISTRICT_NAME": "Bagalkote"
+    },
+    {
+        "TALUKA_NAME": "Jevargi",
+        "TALUKA_CODE": 7,
+        "district_code": 4,
+        "DISTRICT_NAME": "Gulbarga"
+    },
+    {
+        "TALUKA_NAME": "Joida",
+        "TALUKA_CODE": 2,
+        "district_code": 10,
+        "DISTRICT_NAME": "Uttar Kannada"
+    },
+    {
+        "TALUKA_NAME": "K.G.F",
+        "TALUKA_CODE": 12,
+        "district_code": 19,
+        "DISTRICT_NAME": "Kolar"
+    },
+    {
+        "TALUKA_NAME": "K.R.Nagar",
+        "TALUKA_CODE": 3,
+        "district_code": 26,
+        "DISTRICT_NAME": "Mysore"
+    },
+    {
+        "TALUKA_NAME": "Kadaba",
+        "TALUKA_CODE": 7,
+        "district_code": 24,
+        "DISTRICT_NAME": "Dakshina Kannada"
+    },
+    {
+        "TALUKA_NAME": "Kadur",
+        "TALUKA_CODE": 5,
+        "district_code": 17,
+        "DISTRICT_NAME": "Chikmagalur"
+    },
+    {
+        "TALUKA_NAME": "Kalagi",
+        "TALUKA_CODE": 11,
+        "district_code": 4,
+        "DISTRICT_NAME": "Gulbarga"
+    },
+    {
+        "TALUKA_NAME": "Kalgatgi",
+        "TALUKA_CODE": 4,
+        "district_code": 9,
+        "DISTRICT_NAME": "Dharwad"
+    },
+    {
+        "TALUKA_NAME": "Kanakpura",
+        "TALUKA_CODE": 4,
+        "district_code": 29,
+        "DISTRICT_NAME": "Ramanagara"
+    },
+    {
+        "TALUKA_NAME": "Karatagi",
+        "TALUKA_CODE": 5,
+        "district_code": 7,
+        "DISTRICT_NAME": "Koppal"
+    },
+    {
+        "TALUKA_NAME": "Karkala",
+        "TALUKA_CODE": 3,
+        "district_code": 16,
+        "DISTRICT_NAME": "Udupi"
+    },
+    {
+        "TALUKA_NAME": "Karwar",
+        "TALUKA_CODE": 1,
+        "district_code": 10,
+        "DISTRICT_NAME": "Uttar Kannada"
+    },
+    {
+        "TALUKA_NAME": "Khanapur",
+        "TALUKA_CODE": 7,
+        "district_code": 1,
+        "DISTRICT_NAME": "Belgaum"
+    },
+    {
+        "TALUKA_NAME": "Kittura",
+        "TALUKA_CODE": 11,
+        "district_code": 1,
+        "DISTRICT_NAME": "Belgaum"
+    },
+    {
+        "TALUKA_NAME": "Kolar",
+        "TALUKA_CODE": 8,
+        "district_code": 19,
+        "DISTRICT_NAME": "Kolar"
+    },
+    {
+        "TALUKA_NAME": "Kollegala",
+        "TALUKA_CODE": 4,
+        "district_code": 27,
+        "DISTRICT_NAME": "Chamarajanagara"
+    },
+    {
+        "TALUKA_NAME": "Kollegala(Hanur)",
+        "TALUKA_CODE": 5,
+        "district_code": 27,
+        "DISTRICT_NAME": "Chamarajanagara"
+    },
+    {
+        "TALUKA_NAME": "Koppa",
+        "TALUKA_CODE": 2,
+        "district_code": 17,
+        "DISTRICT_NAME": "Chikmagalur"
+    },
+    {
+        "TALUKA_NAME": "Koppal",
+        "TALUKA_CODE": 4,
+        "district_code": 7,
+        "DISTRICT_NAME": "Koppal"
+    },
+    {
+        "TALUKA_NAME": "Koratagere",
+        "TALUKA_CODE": 5,
+        "district_code": 18,
+        "DISTRICT_NAME": "Tumkur"
+    },
+    {
+        "TALUKA_NAME": "K.R.Pet",
+        "TALUKA_CODE": 1,
+        "district_code": 22,
+        "DISTRICT_NAME": "Mandya"
+    },
+    {
+        "TALUKA_NAME": "Kudligi",
+        "TALUKA_CODE": 7,
+        "district_code": 12,
+        "DISTRICT_NAME": "Bellary"
+    },
+    {
+        "TALUKA_NAME": "Kumta",
+        "TALUKA_CODE": 8,
+        "district_code": 10,
+        "DISTRICT_NAME": "Uttar Kannada"
+    },
+    {
+        "TALUKA_NAME": "Kundapura",
+        "TALUKA_CODE": 1,
+        "district_code": 16,
+        "DISTRICT_NAME": "Udupi"
+    },
+    {
+        "TALUKA_NAME": "Kundgol",
+        "TALUKA_CODE": 5,
+        "district_code": 9,
+        "DISTRICT_NAME": "Dharwad"
+    },
+    {
+        "TALUKA_NAME": "Kunigal",
+        "TALUKA_CODE": 10,
+        "district_code": 18,
+        "DISTRICT_NAME": "Tumkur"
+    },
+    {
+        "TALUKA_NAME": "Kurugodu",
+        "TALUKA_CODE": 8,
+        "district_code": 12,
+        "DISTRICT_NAME": "Bellary"
+    },
+    {
+        "TALUKA_NAME": "Kushtagi",
+        "TALUKA_CODE": 2,
+        "district_code": 7,
+        "DISTRICT_NAME": "Koppal"
+    },
+    {
+        "TALUKA_NAME": "Laxmeshwar",
+        "TALUKA_CODE": 7,
+        "district_code": 8,
+        "DISTRICT_NAME": "Gadag"
+    },
+    {
+        "TALUKA_NAME": "Lingasugur",
+        "TALUKA_CODE": 1,
+        "district_code": 6,
+        "DISTRICT_NAME": "Raichur"
+    },
+    {
+        "TALUKA_NAME": "Maddur",
+        "TALUKA_CODE": 6,
+        "district_code": 22,
+        "DISTRICT_NAME": "Mandya"
+    },
+    {
+        "TALUKA_NAME": "Madhugiri",
+        "TALUKA_CODE": 4,
+        "district_code": 18,
+        "DISTRICT_NAME": "Tumkur"
+    },
+    {
+        "TALUKA_NAME": "Madikeri",
+        "TALUKA_CODE": 1,
+        "district_code": 25,
+        "DISTRICT_NAME": "Kodagu"
+    },
+    {
+        "TALUKA_NAME": "Magadi",
+        "TALUKA_CODE": 1,
+        "district_code": 29,
+        "DISTRICT_NAME": "Ramanagara"
+    },
+    {
+        "TALUKA_NAME": "Malavalli",
+        "TALUKA_CODE": 7,
+        "district_code": 22,
+        "DISTRICT_NAME": "Mandya"
+    },
+    {
+        "TALUKA_NAME": "Malur",
+        "TALUKA_CODE": 9,
+        "district_code": 19,
+        "DISTRICT_NAME": "Kolar"
+    },
+    {
+        "TALUKA_NAME": "Mandya",
+        "TALUKA_CODE": 5,
+        "district_code": 22,
+        "DISTRICT_NAME": "Mandya"
+    },
+    {
+        "TALUKA_NAME": "Mangalore",
+        "TALUKA_CODE": 1,
+        "district_code": 24,
+        "DISTRICT_NAME": "Dakshina Kannada"
+    },
+    {
+        "TALUKA_NAME": "Manvi",
+        "TALUKA_CODE": 4,
+        "district_code": 6,
+        "DISTRICT_NAME": "Raichur"
+    },
+    {
+        "TALUKA_NAME": "MASKI",
+        "TALUKA_CODE": 6,
+        "district_code": 6,
+        "DISTRICT_NAME": "Raichur"
+    },
+    {
+        "TALUKA_NAME": "Molakalmur",
+        "TALUKA_CODE": 1,
+        "district_code": 13,
+        "DISTRICT_NAME": "Chitradurga"
+    },
+    {
+        "TALUKA_NAME": "Mudabidri",
+        "TALUKA_CODE": 6,
+        "district_code": 24,
+        "DISTRICT_NAME": "Dakshina Kannada"
+    },
+    {
+        "TALUKA_NAME": "Muddebihal",
+        "TALUKA_CODE": 5,
+        "district_code": 3,
+        "DISTRICT_NAME": "Bijapur"
+    },
+    {
+        "TALUKA_NAME": "Mudhol",
+        "TALUKA_CODE": 3,
+        "district_code": 2,
+        "DISTRICT_NAME": "Bagalkote"
+    },
+    {
+        "TALUKA_NAME": "Mudigere",
+        "TALUKA_CODE": 7,
+        "district_code": 17,
+        "DISTRICT_NAME": "Chikmagalur"
+    },
+    {
+        "TALUKA_NAME": "Mulbagal",
+        "TALUKA_CODE": 11,
+        "district_code": 19,
+        "DISTRICT_NAME": "Kolar"
+    },
+    {
+        "TALUKA_NAME": "Mundargi",
+        "TALUKA_CODE": 5,
+        "district_code": 8,
+        "DISTRICT_NAME": "Gadag"
+    },
+    {
+        "TALUKA_NAME": "Mundgod",
+        "TALUKA_CODE": 5,
+        "district_code": 10,
+        "DISTRICT_NAME": "Uttar Kannada"
+    },
+    {
+        "TALUKA_NAME": "Mysore",
+        "TALUKA_CODE": 4,
+        "district_code": 26,
+        "DISTRICT_NAME": "Mysore"
+    },
+    {
+        "TALUKA_NAME": "Nagamangala",
+        "TALUKA_CODE": 2,
+        "district_code": 22,
+        "DISTRICT_NAME": "Mandya"
+    },
+    {
+        "TALUKA_NAME": "Nanjangud",
+        "TALUKA_CODE": 6,
+        "district_code": 26,
+        "DISTRICT_NAME": "Mysore"
+    },
+    {
+        "TALUKA_NAME": "Naragund",
+        "TALUKA_CODE": 1,
+        "district_code": 8,
+        "DISTRICT_NAME": "Gadag"
+    },
+    {
+        "TALUKA_NAME": "Narasimharajapura",
+        "TALUKA_CODE": 3,
+        "district_code": 17,
+        "DISTRICT_NAME": "Chikmagalur"
+    },
+    {
+        "TALUKA_NAME": "Navalgund",
+        "TALUKA_CODE": 2,
+        "district_code": 9,
+        "DISTRICT_NAME": "Dharwad"
+    },
+    {
+        "TALUKA_NAME": "Nelamangala",
+        "TALUKA_CODE": 1,
+        "district_code": 21,
+        "DISTRICT_NAME": "Bangalore Rural"
+    },
+    {
+        "TALUKA_NAME": "Nidagundi",
+        "TALUKA_CODE": 6,
+        "district_code": 3,
+        "DISTRICT_NAME": "Bijapur"
+    },
+    {
+        "TALUKA_NAME": "Nippani",
+        "TALUKA_CODE": 12,
+        "district_code": 1,
+        "DISTRICT_NAME": "Belgaum"
+    },
+    {
+        "TALUKA_NAME": "Pandavapura",
+        "TALUKA_CODE": 3,
+        "district_code": 22,
+        "DISTRICT_NAME": "Mandya"
+    },
+    {
+        "TALUKA_NAME": "Pavagada",
+        "TALUKA_CODE": 3,
+        "district_code": 18,
+        "DISTRICT_NAME": "Tumkur"
+    },
+    {
+        "TALUKA_NAME": "Periyapatana",
+        "TALUKA_CODE": 1,
+        "district_code": 26,
+        "DISTRICT_NAME": "Mysore"
+    },
+    {
+        "TALUKA_NAME": "Puttur",
+        "TALUKA_CODE": 4,
+        "district_code": 24,
+        "DISTRICT_NAME": "Dakshina Kannada"
+    },
+    {
+        "TALUKA_NAME": "Raibag",
+        "TALUKA_CODE": 3,
+        "district_code": 1,
+        "DISTRICT_NAME": "Belgaum"
+    },
+    {
+        "TALUKA_NAME": "Raichur",
+        "TALUKA_CODE": 3,
+        "district_code": 6,
+        "DISTRICT_NAME": "Raichur"
+    },
+    {
+        "TALUKA_NAME": "Ramadurg",
+        "TALUKA_CODE": 10,
+        "district_code": 1,
+        "DISTRICT_NAME": "Belgaum"
+    },
+    {
+        "TALUKA_NAME": "Ramanagar",
+        "TALUKA_CODE": 2,
+        "district_code": 29,
+        "DISTRICT_NAME": "Ramanagara"
+    },
+    {
+        "TALUKA_NAME": "Ranebennur",
+        "TALUKA_CODE": 7,
+        "district_code": 11,
+        "DISTRICT_NAME": "Haveri"
+    },
+    {
+        "TALUKA_NAME": "Ron",
+        "TALUKA_CODE": 2,
+        "district_code": 8,
+        "DISTRICT_NAME": "Gadag"
+    },
+    {
+        "TALUKA_NAME": "Sagar",
+        "TALUKA_CODE": 1,
+        "district_code": 15,
+        "DISTRICT_NAME": "Shimoga"
+    },
+    {
+        "TALUKA_NAME": "Sakleshpura",
+        "TALUKA_CODE": 1,
+        "district_code": 23,
+        "DISTRICT_NAME": "Hassan"
+    },
+    {
+        "TALUKA_NAME": "Sandur",
+        "TALUKA_CODE": 6,
+        "district_code": 12,
+        "DISTRICT_NAME": "Bellary"
+    },
+    {
+        "TALUKA_NAME": "Savadatti",
+        "TALUKA_CODE": 8,
+        "district_code": 1,
+        "DISTRICT_NAME": "Belgaum"
+    },
+    {
+        "TALUKA_NAME": "Savanur",
+        "TALUKA_CODE": 2,
+        "district_code": 11,
+        "DISTRICT_NAME": "Haveri"
+    },
+    {
+        "TALUKA_NAME": "Sedam",
+        "TALUKA_CODE": 5,
+        "district_code": 4,
+        "DISTRICT_NAME": "Gulbarga"
+    },
+    {
+        "TALUKA_NAME": "Shahapur",
+        "TALUKA_CODE": 2,
+        "district_code": 30,
+        "DISTRICT_NAME": "Yadagir"
+    },
+    {
+        "TALUKA_NAME": "Shiggaon",
+        "TALUKA_CODE": 1,
+        "district_code": 11,
+        "DISTRICT_NAME": "Haveri"
+    },
+    {
+        "TALUKA_NAME": "Shikaripura",
+        "TALUKA_CODE": 3,
+        "district_code": 15,
+        "DISTRICT_NAME": "Shimoga"
+    },
+    {
+        "TALUKA_NAME": "Shimoga",
+        "TALUKA_CODE": 6,
+        "district_code": 15,
+        "DISTRICT_NAME": "Shimoga"
+    },
+    {
+        "TALUKA_NAME": "Shirahatti",
+        "TALUKA_CODE": 4,
+        "district_code": 8,
+        "DISTRICT_NAME": "Gadag"
+    },
+    {
+        "TALUKA_NAME": "Shorapur",
+        "TALUKA_CODE": 3,
+        "district_code": 30,
+        "DISTRICT_NAME": "Yadagir"
+    },
+    {
+        "TALUKA_NAME": "Siddapur",
+        "TALUKA_CODE": 9,
+        "district_code": 10,
+        "DISTRICT_NAME": "Uttar Kannada"
+    },
+    {
+        "TALUKA_NAME": "Sidlaghatta",
+        "TALUKA_CODE": 5,
+        "district_code": 28,
+        "DISTRICT_NAME": "Chikkaballapur"
+    },
+    {
+        "TALUKA_NAME": "Sindagi",
+        "TALUKA_CODE": 3,
+        "district_code": 3,
+        "DISTRICT_NAME": "Bijapur"
+    },
+    {
+        "TALUKA_NAME": "Sindhanur",
+        "TALUKA_CODE": 5,
+        "district_code": 6,
+        "DISTRICT_NAME": "Raichur"
+    },
+    {
+        "TALUKA_NAME": "Sira",
+        "TALUKA_CODE": 2,
+        "district_code": 18,
+        "DISTRICT_NAME": "Tumkur"
+    },
+    {
+        "TALUKA_NAME": "Sirsi",
+        "TALUKA_CODE": 6,
+        "district_code": 10,
+        "DISTRICT_NAME": "Uttar Kannada"
+    },
+    {
+        "TALUKA_NAME": "Siruguppa",
+        "TALUKA_CODE": 4,
+        "district_code": 12,
+        "DISTRICT_NAME": "Bellary"
+    },
+    {
+        "TALUKA_NAME": "Somawarpet",
+        "TALUKA_CODE": 2,
+        "district_code": 25,
+        "DISTRICT_NAME": "Kodagu"
+    },
+    {
+        "TALUKA_NAME": "Soraba",
+        "TALUKA_CODE": 2,
+        "district_code": 15,
+        "DISTRICT_NAME": "Shimoga"
+    },
+    {
+        "TALUKA_NAME": "Sringeri",
+        "TALUKA_CODE": 1,
+        "district_code": 17,
+        "DISTRICT_NAME": "Chikmagalur"
+    },
+    {
+        "TALUKA_NAME": "Srinivaspur",
+        "TALUKA_CODE": 7,
+        "district_code": 19,
+        "DISTRICT_NAME": "Kolar"
+    },
+    {
+        "TALUKA_NAME": "Srirangapatna",
+        "TALUKA_CODE": 4,
+        "district_code": 22,
+        "DISTRICT_NAME": "Mandya"
+    },
+    {
+        "TALUKA_NAME": "Sullia",
+        "TALUKA_CODE": 5,
+        "district_code": 24,
+        "DISTRICT_NAME": "Dakshina Kannada"
+    },
+    {
+        "TALUKA_NAME": "T.Narasipura",
+        "TALUKA_CODE": 7,
+        "district_code": 26,
+        "DISTRICT_NAME": "Mysore"
+    },
+    {
+        "TALUKA_NAME": "Talikoti",
+        "TALUKA_CODE": 9,
+        "district_code": 3,
+        "DISTRICT_NAME": "Bijapur"
+    },
+    {
+        "TALUKA_NAME": "Tarikere",
+        "TALUKA_CODE": 4,
+        "district_code": 17,
+        "DISTRICT_NAME": "Chikmagalur"
+    },
+    {
+        "TALUKA_NAME": "Thirthally",
+        "TALUKA_CODE": 5,
+        "district_code": 15,
+        "DISTRICT_NAME": "Shimoga"
+    },
+    {
+        "TALUKA_NAME": "Tiptur",
+        "TALUKA_CODE": 8,
+        "district_code": 18,
+        "DISTRICT_NAME": "Tumkur"
+    },
+    {
+        "TALUKA_NAME": "Tumkur",
+        "TALUKA_CODE": 6,
+        "district_code": 18,
+        "DISTRICT_NAME": "Tumkur"
+    },
+    {
+        "TALUKA_NAME": "Turuvekere",
+        "TALUKA_CODE": 9,
+        "district_code": 18,
+        "DISTRICT_NAME": "Tumkur"
+    },
+    {
+        "TALUKA_NAME": "Udupi",
+        "TALUKA_CODE": 2,
+        "district_code": 16,
+        "DISTRICT_NAME": "Udupi"
+    },
+    {
+        "TALUKA_NAME": "Vadagera",
+        "TALUKA_CODE": 5,
+        "district_code": 30,
+        "DISTRICT_NAME": "Yadagir"
+    },
+    {
+        "TALUKA_NAME": "Virajpet",
+        "TALUKA_CODE": 3,
+        "district_code": 25,
+        "DISTRICT_NAME": "Kodagu"
+    },
+    {
+        "TALUKA_NAME": "Yadgir",
+        "TALUKA_CODE": 1,
+        "district_code": 30,
+        "DISTRICT_NAME": "Yadagir"
+    },
+    {
+        "TALUKA_NAME": "Yadrami",
+        "TALUKA_CODE": 13,
+        "district_code": 4,
+        "DISTRICT_NAME": "Gulbarga"
+    },
+    {
+        "TALUKA_NAME": "Yalandur",
+        "TALUKA_CODE": 3,
+        "district_code": 27,
+        "DISTRICT_NAME": "Chamarajanagara"
+    },
+    {
+        "TALUKA_NAME": "Yelburga",
+        "TALUKA_CODE": 1,
+        "district_code": 7,
+        "DISTRICT_NAME": "Koppal"
+    },
+    {
+        "TALUKA_NAME": "Yellapur",
+        "TALUKA_CODE": 4,
+        "district_code": 10,
+        "DISTRICT_NAME": "Uttar Kannada"
+    }
+]

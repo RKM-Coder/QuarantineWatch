@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "53120776210",
+    "firebase_url": "https://arogya-mitra.firebaseio.com",
+    "project_id": "arogya-mitra",
+    "storage_bucket": "arogya-mitra.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:53120776210:android:7a89ebab6ed25569cc80cb",
+        "android_client_info": {
+          "package_name": "com.goalsr.homequarantineTracker"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "53120776210-akn6t02pc007so4nk41avvs5ijtjhbbb.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCGAGB83ql6EBdmyPEtb-hoXJQCp3_lnz0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "53120776210-akn6t02pc007so4nk41avvs5ijtjhbbb.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

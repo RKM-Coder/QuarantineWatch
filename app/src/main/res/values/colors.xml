@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#3163c9</color>
+    <color name="colorPrimaryDark">#102d67</color>
+    <color name="cardcolor">#e1ecff</color>
+    <color name="colorAccent">#E70F29</color>
+    <color name="colorWhite">#FAF9F9</color>
+    <color name="colorWhitelight">#A7A5A5</color>
+    <color name="colormoreWhitelight">#D8D5D5</color>
+    <color name="btn_txt_color">#ffffff</color>
+    <color name="c_white">#ffffff</color>
+    <color name="colornormal">#000000</color>
+    <color name="colorselect">#3566ca</color>
+
+</resources>

@@ -1,0 +1,122 @@
+[
+	{
+        "district_code": 1,
+        "DISTRICT_NAME": "Belgaum"
+    },
+    {
+        "district_code": 2,
+        "DISTRICT_NAME": "Bagalkote"
+    },
+    {
+        "district_code": 3,
+        "DISTRICT_NAME": "Bijapur"
+    },
+    {
+        "district_code": 4,
+        "DISTRICT_NAME": "Gulbarga"
+    },
+    {
+        "district_code": 5,
+        "DISTRICT_NAME": "Bidar"
+    },
+    {
+        "district_code": 6,
+        "DISTRICT_NAME": "Raichur"
+    },
+    {
+        "district_code": 7,
+        "DISTRICT_NAME": "koppal"
+    },
+    {
+        "district_code": 8,
+        "DISTRICT_NAME": "Gadag"
+    },
+    {
+        "district_code": 9,
+        "DISTRICT_NAME": "DHARWAD"
+    },
+    {
+        "district_code": 10,
+        "DISTRICT_NAME": "Uttar Kannada"
+    },
+    {
+        "district_code": 11,
+        "DISTRICT_NAME": "Haveri"
+    },
+    {
+        "district_code": 12,
+        "DISTRICT_NAME": "Bellary"
+    },
+    {
+        "district_code": 13,
+        "DISTRICT_NAME": "Chitradurga"
+    },
+    {
+        "district_code": 14,
+        "DISTRICT_NAME": "Davanagere"
+    },
+    {
+        "district_code": 15,
+        "DISTRICT_NAME": "Shimoga"
+    },
+    {
+        "district_code": 16,
+        "DISTRICT_NAME": "Udupi"
+    },
+    {
+        "district_code": 17,
+        "DISTRICT_NAME": "Chikmagalur"
+    },
+    {
+        "district_code": 18,
+        "DISTRICT_NAME": "Tumkur"
+    },
+    {
+        "district_code": 19,
+        "DISTRICT_NAME": "Kolar"
+    },
+    {
+        "district_code": 20,
+        "DISTRICT_NAME": "Bangalore Urban"
+    },
+    {
+        "district_code": 21,
+        "DISTRICT_NAME": "Bangalore Rural"
+    },
+    {
+        "district_code": 22,
+        "DISTRICT_NAME": "Mandya"
+    },
+    {
+        "district_code": 23,
+        "DISTRICT_NAME": "Hassan"
+    },
+    {
+        "district_code": 24,
+        "DISTRICT_NAME": "Dakshina Kannada"
+    },
+    {
+        "district_code": 25,
+        "DISTRICT_NAME": "Kodagu"
+    },
+    {
+        "district_code": 26,
+        "DISTRICT_NAME": "Mysore"
+    },
+    {
+        "district_code": 27,
+        "DISTRICT_NAME": "Chamarajanagara"
+    },
+    {
+        "district_code": 28,
+        "DISTRICT_NAME": "Chikkaballapur"
+    },
+	{
+        "district_code": 29,
+        "DISTRICT_NAME": "Ramanagara"
+    },
+    {
+        "district_code": 30,
+        "DISTRICT_NAME": "Yadagir"
+    }   
+]

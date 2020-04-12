@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#f2f2f2"
+    >
+
+    <FrameLayout
+        android:id="@+id/fram"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:background="@color/colorWhite"
+        >
+
+        <ImageView
+            android:id="@+id/ic_back"
+            android:layout_width="48dp"
+            android:layout_height="36dp"
+            android:visibility="gone"
+            android:src="@drawable/ic_keyboard_backspace_black_24dp"
+            android:layout_gravity="left|center"/>
+        <TextView
+            android:id="@+id/txt_view"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Symptoms"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:textColor="#102d67"
+            android:layout_gravity="center"
+
+            />
+    </FrameLayout>
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true"
+        >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            >
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rv_view"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                />
+
+            <EditText
+                android:id="@+id/et_text"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="25dp"
+                android:padding="20dp"
+                android:background="@drawable/square_shape"
+                android:visibility="gone" />
+            <TextView
+                android:id="@+id/takesefifilename"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Take a Selfie"
+                android:layout_marginLeft="25dp"
+                android:layout_marginRight="25dp"
+                android:layout_marginTop="10dp"
+                android:visibility="gone"
+                android:padding="10dp"
+                android:textSize="14sp"
+                ></TextView>
+
+            <!--- Custom Button -->
+            <RelativeLayout
+                android:id="@+id/patient_list_button"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:layout_margin="25dp"
+
+                android:clickable="true"
+                android:background="@drawable/blue_roundable">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_centerInParent="true"
+                    android:layout_margin="5dp"
+                    android:gravity="center_vertical">
+
+                    <ImageView
+                        android:layout_width="24dp"
+                        android:layout_height="24dp"
+                        android:src="@mipmap/selfie"/>
+
+                    <TextView
+                        android:id="@+id/takesefi"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Take a Selfie"
+                        android:layout_marginLeft="10dp"
+
+
+                        android:textSize="20sp"
+                        android:textColor="#3566ca"
+                        android:textStyle="bold"
+                        ></TextView>
+
+                </LinearLayout>
+            </RelativeLayout>
+
+
+            <Button
+                android:id="@+id/submit_btn"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:text="Send Report"
+                android:background="@drawable/btn_background"
+                android:layout_margin="25dp"
+                android:textSize="20sp"
+                android:textAllCaps="false"
+                android:textColor="@color/btn_txt_color" />
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+
+
+
+
+
+</LinearLayout>

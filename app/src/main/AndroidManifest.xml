@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.goalsr.homequarantineTracker">
+
+    <uses-permission android:name="android.permission.CALL_PHONE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <!--
+    Allows Glide to monitor connectivity status and restart failed requests if users go from a
+    a disconnected to a connected network state.
+    -->
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" /> <!-- Required for foreground services on P+. -->
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.CAMERA" />
+
+    <application
+        android:name=".YelligoApplication"
+        android:allowBackup="false"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme"
+        android:usesCleartextTraffic="true">
+        <activity
+            android:name=".ui.AdminPatientLsitActivity"
+            android:label="@string/title_activity_admin_patient_lsit"
+            android:theme="@style/AppTheme.NoActionBar"></activity>
+        <activity android:name=".ui.DistrictListActivity">
+
+        </activity>
+        <activity android:name=".ui.PatientSymtomUpdateActivity" />
+        <activity android:name=".ui.HomeMainActivity" />
+        <activity android:name=".ui.PatientFamillyActivity" />
+        <activity android:name=".ui.PatientDetailsActivity" />
+        <activity android:name=".ui.OtpCheckerActivity" />
+        <activity android:name=".ui.LoginActivity" />
+        <activity android:name=".ui.DasBoardWorkmanger" />
+        <activity android:name=".ui.DashBardActivity" />
+        <activity android:name=".ui.SymptomCheckerActivity" />
+        <activity android:name=".ui.SplashMainActivity">
+
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <service
+            android:name=".tracker.LocationUpdatesService"
+            android:enabled="true"
+            android:exported="true"
+            android:foregroundServiceType="location" />
+    </application>
+
+</manifest>
