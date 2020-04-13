@@ -2,31 +2,21 @@ package com.goalsr.homequarantineTracker.ui;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AlertDialog;
-import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityCompat;
-import androidx.preference.PreferenceGroup;
 
-import android.annotation.SuppressLint;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.pm.PackageManager;
-import android.os.BaseBundle;
 import android.os.Build;
 import android.os.Bundle;
 import android.os.Handler;
 import android.util.Log;
-import android.view.animation.Animation;
-import android.view.animation.AnimationUtils;
-import android.widget.ImageView;
-import android.widget.TextView;
 import android.widget.Toast;
 
 //import com.amitshekhar.DebugDB;
 import com.goalsr.homequarantineTracker.R;
-import com.goalsr.homequarantineTracker.Utils.AppConstants;
 import com.goalsr.homequarantineTracker.Utils.PreferenceStore;
 import com.goalsr.homequarantineTracker.YelligoApplication;
-import com.goalsr.homequarantineTracker.apiservice.ApiBackGround;
 import com.goalsr.homequarantineTracker.apiservice.NetworkService;
 import com.goalsr.homequarantineTracker.base.BaseActivity;
 import com.goalsr.homequarantineTracker.resposemodel.getPatientinfo.ReqPatient;
@@ -37,7 +27,6 @@ import com.google.firebase.iid.FirebaseInstanceId;
 import com.google.firebase.iid.InstanceIdResult;
 import com.google.firebase.messaging.FirebaseMessaging;
 
-import butterknife.BindView;
 import butterknife.ButterKnife;
 
 import static com.goalsr.homequarantineTracker.Utils.AppConstants.myPermissions;
@@ -176,7 +165,7 @@ public class SplashMainActivity extends BaseActivity {
     private void getPatientInfo() {
         showProgressDialogStatic();
         ReqPatient reqPatient = new ReqPatient();
-        int cId = PreferenceStore.getPrefernceHelperInstace().getIntValue(YelligoApplication.getContext(), PreferenceStore.USER_ID);
+        int cId = PreferenceStore.getPrefernceHelperInstace().getIntValue(YelligoApplication.getContext(), PreferenceStore.CITIZEN_ID);
         reqPatient.setCitizenId(cId);
         reqPatient.setLevel(2);
         reqPatient.setpSecurity(getCommonApi().getSecurityObject());

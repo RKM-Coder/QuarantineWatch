@@ -39,7 +39,6 @@ import com.goalsr.homequarantineTracker.Utils.AppConstants;
 import com.goalsr.homequarantineTracker.Utils.FileUploader;
 import com.goalsr.homequarantineTracker.Utils.PreferenceStore;
 import com.goalsr.homequarantineTracker.YelligoApplication;
-import com.goalsr.homequarantineTracker.apiservice.ApiBackGround;
 import com.goalsr.homequarantineTracker.apiservice.NetworkService;
 import com.goalsr.homequarantineTracker.base.BaseActivity;
 import com.goalsr.homequarantineTracker.db.model.QHTracker;
@@ -118,7 +117,7 @@ public class SymptomCheckerActivity extends BaseActivity implements ListAdapter.
         rvView = findViewById(R.id.rv_view);
         submitBtn = findViewById(R.id.submit_btn);
         initMvp();
-        //userID= PreferenceStore.getPrefernceHelperInstace().getString(YelligoApplication.getContext(),PreferenceStore.USER_ID);
+        //userID= PreferenceStore.getPrefernceHelperInstace().getString(YelligoApplication.getContext(),PreferenceStore.CITIZEN_ID);
         submitBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -580,7 +579,7 @@ public class SymptomCheckerActivity extends BaseActivity implements ListAdapter.
                             String path = cursor.getString(column_index_data);
                             cursor.close();
 
-                            String IMAGE_NAME = PreferenceStore.getPrefernceHelperInstace().getString(YelligoApplication.getContext(), PreferenceStore.USER_ID) + "_" + System.currentTimeMillis() + "_" + "selfi" + ".png";
+                            String IMAGE_NAME = PreferenceStore.getPrefernceHelperInstace().getString(YelligoApplication.getContext(), PreferenceStore.CITIZEN_ID) + "_" + System.currentTimeMillis() + "_" + "selfi" + ".png";
                             if (isImageSupported(path)) {
                                 filename=IMAGE_NAME;
                                 filepath=getFilename(IMAGE_NAME);

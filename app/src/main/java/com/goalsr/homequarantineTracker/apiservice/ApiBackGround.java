@@ -93,7 +93,7 @@ public class ApiBackGround {
         ReqBodyEmergency reqBodyEmergency=new ReqBodyEmergency();
         reqBodyEmergency.setLatitude(PreferenceStore.getPrefernceHelperInstace().getString(YelligoApplication.getContext(),PreferenceStore.USER_LATITUDE));
         reqBodyEmergency.setLongitude(PreferenceStore.getPrefernceHelperInstace().getString(YelligoApplication.getContext(),PreferenceStore.USER_LONGITUDE));
-       // reqBodyEmergency.setUserId(PreferenceStore.getPrefernceHelperInstace().getString(YelligoApplication.getContext(),PreferenceStore.USER_ID));
+       // reqBodyEmergency.setUserId(PreferenceStore.getPrefernceHelperInstace().getString(YelligoApplication.getContext(),PreferenceStore.CITIZEN_ID));
         reqBodyEmergency.setQuarantineStatus("2");
         reqEmegency.setBody(reqBodyEmergency);
         reqEmegency.setHeader(new ReqHeader());
@@ -116,7 +116,7 @@ public class ApiBackGround {
         ArrayList<ReqSymtomBody> reqSymtomBodylist=new ArrayList<>();
         for (QHTracker tracker:list){
             ReqSymtomBody body=new ReqSymtomBody();
-           // body.setUserId(PreferenceStore.getPrefernceHelperInstace().getString(YelligoApplication.getContext(),PreferenceStore.USER_ID));
+           // body.setUserId(PreferenceStore.getPrefernceHelperInstace().getString(YelligoApplication.getContext(),PreferenceStore.CITIZEN_ID));
             body.setLocalId(tracker.getPrimary_id());
             body.setLatitude(tracker.getLocation_lat());
             body.setLongitude(tracker.getLocation_lng());
@@ -142,7 +142,7 @@ public class ApiBackGround {
             ReqBodyEmergency reqBodyEmergency=new ReqBodyEmergency();
             reqBodyEmergency.setLatitude(PreferenceStore.getPrefernceHelperInstace().getString(YelligoApplication.getContext(),PreferenceStore.USER_LATITUDE));
             reqBodyEmergency.setLongitude(PreferenceStore.getPrefernceHelperInstace().getString(YelligoApplication.getContext(),PreferenceStore.USER_LONGITUDE));
-            //reqBodyEmergency.setUserId(PreferenceStore.getPrefernceHelperInstace().getString(YelligoApplication.getContext(),PreferenceStore.USER_ID));
+            //reqBodyEmergency.setUserId(PreferenceStore.getPrefernceHelperInstace().getString(YelligoApplication.getContext(),PreferenceStore.CITIZEN_ID));
             reqEmegency.setBody(reqBodyEmergency);
             reqEmegency.setHeader(new ReqHeader());
             reqEmegency.setTrailer(new ReqTrailer());

@@ -28,8 +28,11 @@ public interface PatientInfoDao {
     ResPatientInfo getListAllItem(int cid);
 
 
-    @Query("SELECT * from patient_info order by Name ASC")
+    @Query("SELECT * from patient_info  where name not null order by Name ASC")
     List<ResPatientInfo> getListAllItemByAdmin();
+
+    @Query("SELECT * from patient_info where name not null order by Name ASC")
+    LiveData<List<ResPatientInfo>> getListAllItemByAdminLivedata();
 
 
     /*@Query("SELECT * from qh_travel_tracking where syncstutas= :status")

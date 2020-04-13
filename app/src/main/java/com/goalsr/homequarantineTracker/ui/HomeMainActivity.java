@@ -20,6 +20,7 @@ import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.widget.Toolbar;
 import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
+import androidx.lifecycle.Observer;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -36,6 +37,7 @@ import com.goalsr.homequarantineTracker.resposemodel.getPatientinfo.ResPatientIn
 import com.google.android.material.snackbar.Snackbar;
 
 import java.util.ArrayList;
+import java.util.List;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -94,7 +96,7 @@ public class HomeMainActivity extends BaseActivity implements FamillyListAdapter
     }
 
     private void getPatentInfo() {
-        int ciD=PreferenceStore.getPrefernceHelperInstace().getIntValue(YelligoApplication.getContext(),PreferenceStore.USER_ID);
+        int ciD=PreferenceStore.getPrefernceHelperInstace().getIntValue(YelligoApplication.getContext(),PreferenceStore.CITIZEN_ID);
         resPatientInfo = getPatientinfoRepository().getPatientInfo(ciD);
         setinfo();
     }
@@ -112,7 +114,12 @@ public class HomeMainActivity extends BaseActivity implements FamillyListAdapter
             txtMainPName.setText("");
         }
 
-        getPatientFamillyInfo();
+        if (getCommonApi().isInternetAvailable(HomeMainActivity.this)){
+            getPatientFamillyInfo();
+        }else {
+            Toast.makeText(YelligoApplication.getContext(),"Please enable internet connection",Toast.LENGTH_LONG).show();
+        }
+
         updatView();
 
     }
@@ -120,7 +127,7 @@ public class HomeMainActivity extends BaseActivity implements FamillyListAdapter
     private void getPatientFamillyInfo() {
         showProgressDialogStatic();
         ReqPatient reqPatient = new ReqPatient();
-        reqPatient.setCitizenId(PreferenceStore.getPrefernceHelperInstace().getIntValue(YelligoApplication.getContext(),PreferenceStore.USER_ID));
+        reqPatient.setCitizenId(PreferenceStore.getPrefernceHelperInstace().getIntValue(YelligoApplication.getContext(),PreferenceStore.CITIZEN_ID));
         reqPatient.setLevel(2);
         reqPatient.setpSecurity(getCommonApi().getSecurityObject());
         networkService.getPatientFamilyInfo(reqPatient, new NetworkService.NetworkServiceListener() {
@@ -155,9 +162,15 @@ public class HomeMainActivity extends BaseActivity implements FamillyListAdapter
     }
 
     private void updatView() {
-        ArrayList<ResPatientFamilyInfo> lisofpatient = new ArrayList<>();
-        lisofpatient.addAll(getPatientFamillyinfoRepository().getPatientFamilyInfo());
-        adapter.setValue(lisofpatient);
+        //ArrayList<ResPatientFamilyInfo> lisofpatient = new ArrayList<>();
+        getPatienFamillytViewmodel().getLivedatPAtient().observe(this, new Observer<List<ResPatientFamilyInfo>>() {
+            @Override
+            public void onChanged(List<ResPatientFamilyInfo> resPatientFamilyInfos) {
+                adapter.setValue((ArrayList<ResPatientFamilyInfo>) resPatientFamilyInfos);
+            }
+        });
+        //lisofpatient.addAll(getPatientFamillyinfoRepository().getPatientFamilyInfo());
+
     }
 
     private void initMvp() {

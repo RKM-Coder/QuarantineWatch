@@ -81,7 +81,11 @@ public class PatientListAdapter extends RecyclerView.Adapter<PatientListAdapter.
 
     @Override
     public int getItemCount() {
-        return listString.size();
+        if (listString != null) {
+            return listString.size();
+        } else {
+            return 0;
+        }
     }
 
     public void setListener(CheckedListener listener) {
@@ -129,9 +133,12 @@ public class PatientListAdapter extends RecyclerView.Adapter<PatientListAdapter.
                     ArrayList<ResPatientInfo> filteredList = new ArrayList<>();
                     for (ResPatientInfo row : listmain) {
 
-                        if (row.getName().toLowerCase().contains(charString.toLowerCase())) {
-                            filteredList.add(row);
+                        if (row.getName()!=null) {
 
+                            if (row.getName().toLowerCase().contains(charString.toLowerCase())) {
+                                filteredList.add(row);
+
+                            }
                         }
                     }
 

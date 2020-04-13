@@ -157,7 +157,7 @@ public class DistrictListActivity extends BaseActivity implements DistrictListAd
     private void getPatientInfo() {
         showProgressDialogStatic();
         ReqPAtientInfoByAdmin reqPatient = new ReqPAtientInfoByAdmin();
-      /*  int cId = PreferenceStore.getPrefernceHelperInstace().getIntValue(YelligoApplication.getContext(), PreferenceStore.USER_ID);
+      /*  int cId = PreferenceStore.getPrefernceHelperInstace().getIntValue(YelligoApplication.getContext(), PreferenceStore.CITIZEN_ID);
         reqPatient.setCitizenId(cId);
         reqPatient.setLevel(2);*/
         Log.e("PatientList",PreferenceStore.getPrefernceHelperInstace().getIntValue(YelligoApplication.getContext(),PreferenceStore.DISTRICT_ID)+"");
@@ -205,7 +205,12 @@ public class DistrictListActivity extends BaseActivity implements DistrictListAd
 
         PreferenceStore.getPrefernceHelperInstace().setIntValue(YelligoApplication.getContext(),PreferenceStore.DISTRICT_ID,item.getDistrict_code());
         PreferenceStore.getPrefernceHelperInstace().setString(YelligoApplication.getContext(),PreferenceStore.DISTRICT_NAME,item.getDISTRICT_NAME());
-        getPatientInfo();
+        if (getCommonApi().isInternetAvailable(DistrictListActivity.this)){
+            getPatientInfo();
+        }else {
+            Toast.makeText(YelligoApplication.getContext(),"Please enable internet connection",Toast.LENGTH_LONG).show();
+        }
+
 
     }
 }

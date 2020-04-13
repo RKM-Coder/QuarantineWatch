@@ -89,6 +89,8 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:textSize="14sp"
+                    android:imeOptions="actionDone"
+                    android:singleLine="true"
                     android:background="@drawable/et_background_normal"
                     android:drawableLeft="@drawable/ic_search_black_24dp"
                     android:drawablePadding="10dp"

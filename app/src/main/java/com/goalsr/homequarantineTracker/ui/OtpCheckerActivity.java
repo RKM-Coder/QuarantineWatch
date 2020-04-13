@@ -170,7 +170,7 @@ public class OtpCheckerActivity extends BaseActivity {
                             if(PreferenceStore.getPrefernceHelperInstace().getIntValue(YelligoApplication.getContext(),PreferenceStore.ROLL_ID)==2){
 
                                 PreferenceStore.getPrefernceHelperInstace().setFlag(YelligoApplication.getContext(), PreferenceStore.LOGIN, true);
-
+                                PreferenceStore.getPrefernceHelperInstace().setIntValue(YelligoApplication.getContext(), PreferenceStore.USER_ID_login, ((ResGvtValidOtpValid) response).getUserId());
                                 if (PreferenceStore.getPrefernceHelperInstace().getIntValue(OtpCheckerActivity.this, PreferenceStore.DISTRICT_ID)==0) {
                                     Intent intent = new Intent(getApplicationContext(), DistrictListActivity.class);
                                     intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_NEW_TASK);
@@ -186,7 +186,8 @@ public class OtpCheckerActivity extends BaseActivity {
                                 }
 
                             }else {
-                                PreferenceStore.getPrefernceHelperInstace().setIntValue(YelligoApplication.getContext(), PreferenceStore.USER_ID, ((ResGvtValidOtpValid) response).getUserId());
+                                PreferenceStore.getPrefernceHelperInstace().setIntValue(YelligoApplication.getContext(), PreferenceStore.CITIZEN_ID, ((ResGvtValidOtpValid) response).getUserId());
+                                PreferenceStore.getPrefernceHelperInstace().setIntValue(YelligoApplication.getContext(), PreferenceStore.USER_ID_login, ((ResGvtValidOtpValid) response).getUserId());
                       /*  PreferenceStore.getPrefernceHelperInstace().setString(YelligoApplication.getContext(), PreferenceStore.USER_NAME, ((ResOtpValid) response).getData().getName());
                         PreferenceStore.getPrefernceHelperInstace().setString(YelligoApplication.getContext(), PreferenceStore.USER_HOME_LAT, ((ResOtpValid) response).getData().getLatitude());
                         PreferenceStore.getPrefernceHelperInstace().setString(YelligoApplication.getContext(), PreferenceStore.USER_HOME_LNG, ((ResOtpValid) response).getData().getLongitude());
@@ -223,7 +224,7 @@ public class OtpCheckerActivity extends BaseActivity {
     private void getPatientInfo() {
         showProgressDialogStatic();
         ReqPatient reqPatient = new ReqPatient();
-        int cId = PreferenceStore.getPrefernceHelperInstace().getIntValue(YelligoApplication.getContext(), PreferenceStore.USER_ID);
+        int cId = PreferenceStore.getPrefernceHelperInstace().getIntValue(YelligoApplication.getContext(), PreferenceStore.CITIZEN_ID);
         reqPatient.setCitizenId(cId);
         reqPatient.setLevel(2);
         reqPatient.setpSecurity(getCommonApi().getSecurityObject());
@@ -301,13 +302,19 @@ public class OtpCheckerActivity extends BaseActivity {
            reqOtpValid.setHeader(new ReqHeader());
            reqOtpValid.setTrailer(new ReqTrailer());*/
 
-                    ReqOtpValidGvt reqOtpValidGvt = new ReqOtpValidGvt();
-                    reqOtpValidGvt.setMobileNo(mobnum);
-                    reqOtpValidGvt.setOTP(pinView.getText().toString());
-                    reqOtpValidGvt.setpSecurity(getCommonApi().getSecurityObject());
-                    reqOtpValidGvt.setRole(rollid);
+                    if (getCommonApi().isInternetAvailable(OtpCheckerActivity.this)){
+                        ReqOtpValidGvt reqOtpValidGvt = new ReqOtpValidGvt();
+                        reqOtpValidGvt.setMobileNo(mobnum);
+                        reqOtpValidGvt.setOTP(pinView.getText().toString());
+                        reqOtpValidGvt.setpSecurity(getCommonApi().getSecurityObject());
+                        reqOtpValidGvt.setRole(rollid);
 
-                    makeotpValid(reqOtpValidGvt);
+                        makeotpValid(reqOtpValidGvt);
+                    }else {
+                        Toast.makeText(YelligoApplication.getContext(),"Please enable internet connection",Toast.LENGTH_LONG).show();
+                    }
+
+
                 }
                 break;
             case R.id.txt_104:

@@ -5,7 +5,6 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
-import android.util.Log;
 import android.view.View;
 import android.widget.ImageButton;
 import android.widget.ImageView;
@@ -16,6 +15,7 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.widget.Toolbar;
+import androidx.lifecycle.Observer;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
@@ -185,7 +185,7 @@ public class AdminPatientLsitActivity extends BaseActivity implements PatientLis
         //showProgressDialogStatic();
 
         ReqPAtientInfoByAdmin reqPatient = new ReqPAtientInfoByAdmin();
-      /*  int cId = PreferenceStore.getPrefernceHelperInstace().getIntValue(YelligoApplication.getContext(), PreferenceStore.USER_ID);
+      /*  int cId = PreferenceStore.getPrefernceHelperInstace().getIntValue(YelligoApplication.getContext(), PreferenceStore.CITIZEN_ID);
         reqPatient.setCitizenId(cId);
         reqPatient.setLevel(2);*/
         reqPatient.setDistCode(PreferenceStore.getPrefernceHelperInstace().getIntValue(YelligoApplication.getContext(), PreferenceStore.DISTRICT_ID));
@@ -239,10 +239,17 @@ public class AdminPatientLsitActivity extends BaseActivity implements PatientLis
     }
 
     private void updateUI() {
-        List<ResPatientInfo> patientList = new ArrayList<>();
-        patientList = getPatientinfoRepository().getListAllItemByAdmin();
-        Log.e("PatientList--", patientList.size() + "");
-        adapter.setValue((ArrayList<ResPatientInfo>) patientList);
+       // List<ResPatientInfo> patientList = new ArrayList<>();
+
+        getPatientViewmodel().getLivedatPAtient().observe(this, new Observer<List<ResPatientInfo>>() {
+            @Override
+            public void onChanged(List<ResPatientInfo> resPatientInfos) {
+                adapter.setValue((ArrayList<ResPatientInfo>) resPatientInfos);
+            }
+        });
+     /*   patientList = getPatientinfoRepository().getListAllItemByAdmin();
+        Log.e("PatientList--", patientList.size() + "");*/
+
 
     }
 
@@ -256,7 +263,7 @@ public class AdminPatientLsitActivity extends BaseActivity implements PatientLis
     public void onItemCheckedFamilly(int position, ResPatientInfo item) {
         if (item.getCitizenID() > 0) {
             getPatientFamillyinfoRepository().clear();
-            PreferenceStore.getPrefernceHelperInstace().setIntValue(YelligoApplication.getContext(), PreferenceStore.USER_ID, item.getCitizenID());
+            PreferenceStore.getPrefernceHelperInstace().setIntValue(YelligoApplication.getContext(), PreferenceStore.CITIZEN_ID, item.getCitizenID());
             Intent intent = new Intent(getApplicationContext(), HomeMainActivity.class);
             /*intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_NEW_TASK);*/
             startActivity(intent);

@@ -206,7 +206,7 @@ public class PatientSymtomUpdateActivity extends BaseActivity {
             }
         }
         resPatientInfo = new ResPatientInfo();
-        int ciD=PreferenceStore.getPrefernceHelperInstace().getIntValue(YelligoApplication.getContext(),PreferenceStore.USER_ID);
+        int ciD=PreferenceStore.getPrefernceHelperInstace().getIntValue(YelligoApplication.getContext(),PreferenceStore.CITIZEN_ID);
         resPatientInfo = getPatientinfoRepository().getPatientInfo(ciD);
 
 
@@ -227,7 +227,7 @@ public class PatientSymtomUpdateActivity extends BaseActivity {
 
     private void getPatientSelf() {
         resPatientInfo = new ResPatientInfo();
-        int ciD=PreferenceStore.getPrefernceHelperInstace().getIntValue(YelligoApplication.getContext(),PreferenceStore.USER_ID);
+        int ciD=PreferenceStore.getPrefernceHelperInstace().getIntValue(YelligoApplication.getContext(),PreferenceStore.CITIZEN_ID);
         resPatientInfo = getPatientinfoRepository().getPatientInfo(ciD);
         if (resPatientInfo != null) {
             if (resPatientInfo.getName() != null) {
@@ -270,9 +270,19 @@ public class PatientSymtomUpdateActivity extends BaseActivity {
             case R.id.tv_logout:
                 if (value.size() > 0) {
                     if (key.equalsIgnoreCase("self")) {
-                        symtomUpdateSelf();
+                        if (getCommonApi().isInternetAvailable(PatientSymtomUpdateActivity.this)){
+                            symtomUpdateSelf();
+                        }else {
+                            Toast.makeText(YelligoApplication.getContext(),"Please enable internet connection",Toast.LENGTH_LONG).show();
+                        }
+
                     } else if (key.equalsIgnoreCase("family")) {
-                        symtomUpdateFamily();
+                        if (getCommonApi().isInternetAvailable(PatientSymtomUpdateActivity.this)){
+                            symtomUpdateFamily();
+                        }else {
+                            Toast.makeText(YelligoApplication.getContext(),"Please enable internet connection",Toast.LENGTH_LONG).show();
+                        }
+
                     }
                 } else {
                     showDialog("Please take photo", false);
@@ -378,7 +388,7 @@ public class PatientSymtomUpdateActivity extends BaseActivity {
                             String path = cursor.getString(column_index_data);
                             cursor.close();
 
-                            String IMAGE_NAME = PreferenceStore.getPrefernceHelperInstace().getIntValue(YelligoApplication.getContext(), PreferenceStore.USER_ID) + "_" + System.currentTimeMillis() + "_" + "selfi" + ".png";
+                            String IMAGE_NAME = PreferenceStore.getPrefernceHelperInstace().getIntValue(YelligoApplication.getContext(), PreferenceStore.CITIZEN_ID) + "_" + System.currentTimeMillis() + "_" + "selfi" + ".png";
                             if (isImageSupported(path)) {
                                 filename = IMAGE_NAME;
                                 filepath = getFilename(IMAGE_NAME);
@@ -829,9 +839,9 @@ public class PatientSymtomUpdateActivity extends BaseActivity {
 
         reqImageChunk.setDOC_CAPTYPE("Image");
         reqImageChunk.setDOC_TYPE("PATIENT_SELFIE_IMAGE");
-        reqImageChunk.setDOC_CBY(PreferenceStore.getPrefernceHelperInstace().getIntValue(YelligoApplication.getContext(),PreferenceStore.USER_ID));
+        reqImageChunk.setDOC_CBY(PreferenceStore.getPrefernceHelperInstace().getIntValue(YelligoApplication.getContext(),PreferenceStore.USER_ID_login));
         reqImageChunk.setDOC_CHNK_CNT(value.size());
-        reqImageChunk.setDOC_CITZ_ID(PreferenceStore.getPrefernceHelperInstace().getIntValue(YelligoApplication.getContext(),PreferenceStore.USER_ID));
+        reqImageChunk.setDOC_CITZ_ID(PreferenceStore.getPrefernceHelperInstace().getIntValue(YelligoApplication.getContext(),PreferenceStore.CITIZEN_ID));
         // reqImageChunk.setDOC_CNK("");
         if (key.equalsIgnoreCase("self")) {
             reqImageChunk.setDOC_FAMLY_PER_ID(0);
@@ -842,7 +852,7 @@ public class PatientSymtomUpdateActivity extends BaseActivity {
             reqImageChunk.setDOC_MOBILE("" + resPatientFamilyInfo.getMobile());
             reqImageChunk.setDOC_ROLE_ID(resPatientFamilyInfo.getURoleBy());
         }
-        String imagename = PreferenceStore.getPrefernceHelperInstace().getIntValue(YelligoApplication.getContext(),PreferenceStore.USER_ID) + "_" + uniqueId + ".png";
+        String imagename = PreferenceStore.getPrefernceHelperInstace().getIntValue(YelligoApplication.getContext(),PreferenceStore.CITIZEN_ID) + "_" + uniqueId + ".png";
         reqImageChunk.setDOC_IMAGE_NAME("" + imagename);
 
         reqImageChunk.setDOC_LAT(mLocation.getLatitude());
@@ -943,9 +953,9 @@ public class PatientSymtomUpdateActivity extends BaseActivity {
 
     private void symtomUpdateSelf() {
         showProgressDialogStatic();
-        int ciD=PreferenceStore.getPrefernceHelperInstace().getIntValue(YelligoApplication.getContext(),PreferenceStore.USER_ID);
+        int ciD=PreferenceStore.getPrefernceHelperInstace().getIntValue(YelligoApplication.getContext(),PreferenceStore.CITIZEN_ID);
         ReqGvtPatientSymptom reqGvtPatientSymptom = new ReqGvtPatientSymptom();
-        reqGvtPatientSymptom.setAdditionalInfo("");
+        reqGvtPatientSymptom.setAdditionalInfo("ANDROID");
         reqGvtPatientSymptom.setCitizenID(getPatientinfoRepository().getPatientInfo(ciD).getCitizenID());
         reqGvtPatientSymptom.setBreathingProblem(isbreathing);
         reqGvtPatientSymptom.setCoughSourThroat(iscoughandsour);
@@ -955,8 +965,8 @@ public class PatientSymtomUpdateActivity extends BaseActivity {
         reqGvtPatientSymptom.setHeartIssue(isheartdisses);
         reqGvtPatientSymptom.setHypertension(ishypertense);
         reqGvtPatientSymptom.setHIV(ishiv);
-        reqGvtPatientSymptom.setRoleId(getPatientinfoRepository().getPatientInfo(ciD).getURoleBy());
-        reqGvtPatientSymptom.setUBy(getPatientinfoRepository().getPatientInfo(ciD).getURoleBy());
+        reqGvtPatientSymptom.setRoleId(PreferenceStore.getPrefernceHelperInstace().getIntValue(YelligoApplication.getContext(),PreferenceStore.ROLL_ID));
+        reqGvtPatientSymptom.setUBy(PreferenceStore.getPrefernceHelperInstace().getIntValue(YelligoApplication.getContext(),PreferenceStore.USER_ID_login));
         reqGvtPatientSymptom.setpSecurity(getCommonApi().getSecurityObject());
 
         networkService.sendpatientsymtomInfo(reqGvtPatientSymptom, new NetworkService.NetworkServiceListener() {
@@ -989,9 +999,9 @@ public class PatientSymtomUpdateActivity extends BaseActivity {
 
     private void symtomUpdateFamily() {
         showProgressDialogStatic();
-        int ciD=PreferenceStore.getPrefernceHelperInstace().getIntValue(YelligoApplication.getContext(),PreferenceStore.USER_ID);
+        int ciD=PreferenceStore.getPrefernceHelperInstace().getIntValue(YelligoApplication.getContext(),PreferenceStore.CITIZEN_ID);
         ReqGvtPatientFamillySymptom reqGvtPatientSymptom = new ReqGvtPatientFamillySymptom();
-        reqGvtPatientSymptom.setAdditionalInfo("");
+        reqGvtPatientSymptom.setAdditionalInfo("ANDROID");
         reqGvtPatientSymptom.setFamilyPersonId(resPatientFamilyInfo.getCitizenFamilyPersonId());
         reqGvtPatientSymptom.setCitizenID(getPatientinfoRepository().getPatientInfo(ciD).getCitizenID());
         reqGvtPatientSymptom.setBreathingProblem(isbreathing);
@@ -1002,8 +1012,8 @@ public class PatientSymtomUpdateActivity extends BaseActivity {
         reqGvtPatientSymptom.setHeartIssue(isheartdisses);
         reqGvtPatientSymptom.setHypertension(ishypertense);
         reqGvtPatientSymptom.setHIV(ishiv);
-        reqGvtPatientSymptom.setRoleId(getPatientinfoRepository().getPatientInfo(ciD).getURoleBy());
-        reqGvtPatientSymptom.setUBy(getPatientinfoRepository().getPatientInfo(ciD).getURoleBy());
+        reqGvtPatientSymptom.setRoleId(PreferenceStore.getPrefernceHelperInstace().getIntValue(YelligoApplication.getContext(),PreferenceStore.ROLL_ID));
+        reqGvtPatientSymptom.setUBy(PreferenceStore.getPrefernceHelperInstace().getIntValue(YelligoApplication.getContext(),PreferenceStore.USER_ID_login));
         reqGvtPatientSymptom.setpSecurity(getCommonApi().getSecurityObject());
 
         networkService.sendpatientFamillysymtomInfo(reqGvtPatientSymptom, new NetworkService.NetworkServiceListener() {

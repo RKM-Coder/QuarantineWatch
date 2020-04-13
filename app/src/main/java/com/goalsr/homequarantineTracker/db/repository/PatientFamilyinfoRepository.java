@@ -99,10 +99,10 @@ public class PatientFamilyinfoRepository {
         return mDao.getListAllTaskComplete("3");
     }*/
 
-    /*public LiveData<List<QHTracker>> getAllItemLivedata() {
+    public LiveData<List<ResPatientFamilyInfo>> getListAllItemLivedata() {
 
-        return mDao.getListAllItem();
-    }*/
+        return mDao.getListAllItemLivedata();
+    }
 
     private class InsertAsynctask extends AsyncTask<Void, Void, Void> {
         ResPatientFamilyInfo value;

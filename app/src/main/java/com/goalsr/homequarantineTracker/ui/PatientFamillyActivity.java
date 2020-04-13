@@ -36,6 +36,7 @@ import com.goalsr.homequarantineTracker.YelligoApplication;
 import com.goalsr.homequarantineTracker.adapter.SpinAdapter;
 import com.goalsr.homequarantineTracker.apiservice.NetworkService;
 import com.goalsr.homequarantineTracker.base.BaseActivity;
+import com.goalsr.homequarantineTracker.db.viewmodel.PatientFamilyViewmodel;
 import com.goalsr.homequarantineTracker.dialog.CustomDialogGeneric;
 import com.goalsr.homequarantineTracker.fragment.DatePickerFragment;
 import com.goalsr.homequarantineTracker.gpsenable.GpsUtils;
@@ -220,7 +221,7 @@ public class PatientFamillyActivity extends BaseActivity implements DatePickerFr
         getDistrict();
         getTaluk();
         requestPermissions();
-        int ciD=PreferenceStore.getPrefernceHelperInstace().getIntValue(YelligoApplication.getContext(),PreferenceStore.USER_ID);
+        int ciD=PreferenceStore.getPrefernceHelperInstace().getIntValue(YelligoApplication.getContext(),PreferenceStore.CITIZEN_ID);
         resPatientInfobasic = getPatientinfoRepository().getPatientInfo(ciD);
 
         updateUI();
@@ -809,7 +810,11 @@ public class PatientFamillyActivity extends BaseActivity implements DatePickerFr
                 ishiv = chkBox8.isChecked();
                 break;
             case R.id.submit_btn:
-                submitData();
+                if (getCommonApi().isInternetAvailable(PatientFamillyActivity.this)){
+                    submitData();
+                }else {
+                    Toast.makeText(YelligoApplication.getContext(),"Please enable internet connection",Toast.LENGTH_LONG).show();
+                }
                 break;
             case R.id.iv_back_fac:
                 finish();

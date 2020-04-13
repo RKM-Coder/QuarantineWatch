@@ -230,8 +230,11 @@ public class PatientDetailsActivity extends BaseActivity implements DatePickerFr
         getTaluk();
         requestPermissions();
         if (key.equalsIgnoreCase("")) {
-
-            getPatientInfo();
+            if (getCommonApi().isInternetAvailable(PatientDetailsActivity.this)) {
+                getPatientInfo();
+            }else {
+                Toast.makeText(YelligoApplication.getContext(),"Please enable internet connection",Toast.LENGTH_LONG).show();
+            }
         } else {
             updateUI();
         }
@@ -245,7 +248,7 @@ public class PatientDetailsActivity extends BaseActivity implements DatePickerFr
     private void getPatientInfo() {
         showProgressDialogStatic();
         ReqPatient reqPatient = new ReqPatient();
-        int cId = PreferenceStore.getPrefernceHelperInstace().getIntValue(YelligoApplication.getContext(), PreferenceStore.USER_ID);
+        int cId = PreferenceStore.getPrefernceHelperInstace().getIntValue(YelligoApplication.getContext(), PreferenceStore.CITIZEN_ID);
         reqPatient.setCitizenId(cId);
         reqPatient.setLevel(2);
         reqPatient.setpSecurity(getCommonApi().getSecurityObject());
@@ -291,7 +294,7 @@ public class PatientDetailsActivity extends BaseActivity implements DatePickerFr
     }
 
     private void updateUI() {
-        int ciD=PreferenceStore.getPrefernceHelperInstace().getIntValue(YelligoApplication.getContext(),PreferenceStore.USER_ID);
+        int ciD=PreferenceStore.getPrefernceHelperInstace().getIntValue(YelligoApplication.getContext(),PreferenceStore.CITIZEN_ID);
         resPatientInfo = getPatientinfoRepository().getPatientInfo(ciD);
         if (resPatientInfo.getName() != null) {
             etCustomerName.setText("" + resPatientInfo.getName());
@@ -666,7 +669,12 @@ public class PatientDetailsActivity extends BaseActivity implements DatePickerFr
                 ishiv = chkBox8.isChecked();
                 break;
             case R.id.submit_btn:
-                submitData();
+                if (getCommonApi().isInternetAvailable(PatientDetailsActivity.this)){
+                    submitData();
+                }else {
+                    Toast.makeText(YelligoApplication.getContext(),"Please enable internet connection",Toast.LENGTH_LONG).show();
+                }
+
                 break;
             case R.id.tv_logout:
                 showDialogWarnLogout("Do you want to logout?");

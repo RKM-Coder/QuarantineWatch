@@ -1,5 +1,6 @@
 package com.goalsr.homequarantineTracker.db.dao;
 
+import androidx.lifecycle.LiveData;
 import androidx.room.Dao;
 import androidx.room.Insert;
 import androidx.room.OnConflictStrategy;
@@ -25,6 +26,9 @@ public interface PatientFamilyInfoDao {
 
     @Query("SELECT * from patent_family")
     List<ResPatientFamilyInfo> getListAllItem();
+
+    @Query("SELECT * from patent_family")
+    LiveData<List<ResPatientFamilyInfo>> getListAllItemLivedata();
 
     @Query("SELECT * from patent_family where citizenFamilyPersonId =:id")
     ResPatientFamilyInfo getListAllItem(int id);

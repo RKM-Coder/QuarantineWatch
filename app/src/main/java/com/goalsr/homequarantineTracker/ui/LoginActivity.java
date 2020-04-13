@@ -31,6 +31,7 @@ import com.goalsr.homequarantineTracker.apiservice.NetworkService;
 import com.goalsr.homequarantineTracker.base.BaseActivity;
 import com.goalsr.homequarantineTracker.dialog.CustomDialogGeneric;
 import com.goalsr.homequarantineTracker.resposemodel.gotOtpreq.ResGvtValidOtp;
+import com.goalsr.homequarantineTracker.resposemodel.otpvalidGovt.ReqOtpValidGvt;
 import com.google.android.material.snackbar.Snackbar;
 
 import butterknife.BindView;
@@ -124,48 +125,52 @@ public class LoginActivity extends BaseActivity {
     }
 
     private void reqforPI() {
-        networkService.makeAppLogin(etPhoneNum.getText().toString(), new NetworkService.NetworkServiceListener() {
-            @Override
-            public void onFailure(Object response) {
-                hideProgressDialogStatic();
-                if (response instanceof ResGvtValidOtp) {
-                    String error = ((ResGvtValidOtp) response).getMessageToDisplay();
-                    if (error != null) {
-                        Toast.makeText(getApplicationContext(), error, Toast.LENGTH_LONG).show();
+
+
+            networkService.makeAppLogin(etPhoneNum.getText().toString(), new NetworkService.NetworkServiceListener() {
+                @Override
+                public void onFailure(Object response) {
+                    hideProgressDialogStatic();
+                    if (response instanceof ResGvtValidOtp) {
+                        String error = ((ResGvtValidOtp) response).getMessageToDisplay();
+                        if (error != null) {
+                            Toast.makeText(getApplicationContext(), error, Toast.LENGTH_LONG).show();
+                        }
                     }
+
                 }
 
-            }
+                @Override
+                public void onAuthFail(Object error) {
+                    hideProgressDialogStatic();
+                }
 
-            @Override
-            public void onAuthFail(Object error) {
-                hideProgressDialogStatic();
-            }
+                @Override
+                public void onSuccess(Object response, Boolean cancelFlag) {
+                    hideProgressDialogStatic();
 
-            @Override
-            public void onSuccess(Object response, Boolean cancelFlag) {
-                hideProgressDialogStatic();
-
-                if (response instanceof ResGvtValidOtp) {
-                    if (((ResGvtValidOtp) response).getStatuscode() == 200) {
-                        if (((ResGvtValidOtp) response).isStatus()) {
-                            PreferenceStore.getPrefernceHelperInstace().setIntValue(YelligoApplication.getContext(), PreferenceStore.ROLL_ID, ((ResGvtValidOtp) response).getRoleId());
-                            Toast.makeText(getApplicationContext(), "The verification code has been sent to your mobile number.", Toast.LENGTH_LONG).show();
-                            Intent i = new Intent(getApplicationContext(), OtpCheckerActivity.class);
-                            i.putExtra("MobNumber", etPhoneNum.getText().toString());
-                            i.putExtra("rollid", ((ResGvtValidOtp) response).getRoleId());
-                            startActivity(i);
+                    if (response instanceof ResGvtValidOtp) {
+                        if (((ResGvtValidOtp) response).getStatuscode() == 200) {
+                            if (((ResGvtValidOtp) response).isStatus()) {
+                                PreferenceStore.getPrefernceHelperInstace().setIntValue(YelligoApplication.getContext(), PreferenceStore.ROLL_ID, ((ResGvtValidOtp) response).getRoleId());
+                                Toast.makeText(getApplicationContext(), "The verification code has been sent to your mobile number.", Toast.LENGTH_LONG).show();
+                                Intent i = new Intent(getApplicationContext(), OtpCheckerActivity.class);
+                                i.putExtra("MobNumber", etPhoneNum.getText().toString());
+                                i.putExtra("rollid", ((ResGvtValidOtp) response).getRoleId());
+                                startActivity(i);
+                            } else {
+                                Toast.makeText(getApplicationContext(), "Please Try Again", Toast.LENGTH_LONG).show();
+                            }
                         } else {
-                            Toast.makeText(getApplicationContext(), "Please Try Again", Toast.LENGTH_LONG).show();
-                        }
-                    } else {
-                        if (((ResGvtValidOtp) response).getMessageToDisplay() != null) {
-                            Toast.makeText(getApplicationContext(), "" + ((ResGvtValidOtp) response).getMessageToDisplay(), Toast.LENGTH_LONG).show();
+                            if (((ResGvtValidOtp) response).getMessageToDisplay() != null) {
+                                Toast.makeText(getApplicationContext(), "" + ((ResGvtValidOtp) response).getMessageToDisplay(), Toast.LENGTH_LONG).show();
+                            }
                         }
                     }
                 }
-            }
-        });
+            });
+
+
     }
 
     @Override
@@ -183,22 +188,31 @@ public class LoginActivity extends BaseActivity {
                             showDialogWarnLogout("The application is registered with " + PreferenceStore.getPrefernceHelperInstace().getString(YelligoApplication.getContext(), PreferenceStore.USER_PHONE)
                                     + ", do you want to continue?");
                         } else {
-                            showProgressDialogStatic();
 
-                            reqforPI();
+                            if (getCommonApi().isInternetAvailable(LoginActivity.this)) {
+                                showProgressDialogStatic();
+
+                                reqforPI();
+                            }else {
+                                Toast.makeText(YelligoApplication.getContext(),"Please enable internet connection",Toast.LENGTH_LONG).show();
+                            }
                         }
                     }else {
 
                         PreferenceStore.getPrefernceHelperInstace().clearValue(YelligoApplication.getContext(),PreferenceStore.ISUPDATEPATENTINFO);
                         PreferenceStore.getPrefernceHelperInstace().clearValue(YelligoApplication.getContext(),PreferenceStore.USER_PHONE);
-                        PreferenceStore.getPrefernceHelperInstace().clearValue(YelligoApplication.getContext(),PreferenceStore.USER_ID);
+                        PreferenceStore.getPrefernceHelperInstace().clearValue(YelligoApplication.getContext(),PreferenceStore.CITIZEN_ID);
                         PreferenceStore.getPrefernceHelperInstace().clearValue(YelligoApplication.getContext(),PreferenceStore.DISTRICT_NAME);
                         PreferenceStore.getPrefernceHelperInstace().clearValue(YelligoApplication.getContext(),PreferenceStore.DISTRICT_ID);
                         getPatientinfoRepository().clear();
                         getPatientFamillyinfoRepository().clear();
-                        showProgressDialogStatic();
+                        if (getCommonApi().isInternetAvailable(LoginActivity.this)) {
+                            showProgressDialogStatic();
 
-                        reqforPI();
+                            reqforPI();
+                        }else {
+                            Toast.makeText(YelligoApplication.getContext(),"Please enable internet connection",Toast.LENGTH_LONG).show();
+                        }
                     }
                 }
                 break;
@@ -243,9 +257,13 @@ public class LoginActivity extends BaseActivity {
                             PreferenceStore.getPrefernceHelperInstace().clearValue(YelligoApplication.getContext(),PreferenceStore.DISTRICT_ID);
                             getPatientinfoRepository().clear();
                             getPatientFamillyinfoRepository().clear();
-                            showProgressDialogStatic();
+                            if (getCommonApi().isInternetAvailable(LoginActivity.this)) {
+                                showProgressDialogStatic();
 
-                            reqforPI();
+                                reqforPI();
+                            }else {
+                                Toast.makeText(YelligoApplication.getContext(),"Please enable internet connection",Toast.LENGTH_LONG).show();
+                            }
                             dialog.dismiss();
                             //submitLogout();
                         }

@@ -225,7 +225,7 @@ public class NetworkService {
                                 public void run() {
                                     listener.onSuccess(response.body().get(0),true);
                                 }
-                            }, 1200);
+                            }, 100);
 
                         }else {
                             listener.onFailure("No result found");
@@ -302,7 +302,7 @@ public class NetworkService {
                                 public void run() {
                                     listener.onSuccess(response.body().get(0),true);
                                 }
-                            }, 1000);
+                            }, 100);
 
                         }else {
                             listener.onFailure("");

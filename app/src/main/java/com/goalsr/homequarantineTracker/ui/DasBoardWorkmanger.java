@@ -28,15 +28,12 @@ import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AlertDialog;
 import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
-import androidx.work.PeriodicWorkRequest;
-import androidx.work.WorkManager;
 
 import com.goalsr.homequarantineTracker.R;
 import com.goalsr.homequarantineTracker.Utils.AppConstants;
 import com.goalsr.homequarantineTracker.Utils.FileUploader;
 import com.goalsr.homequarantineTracker.Utils.PreferenceStore;
 import com.goalsr.homequarantineTracker.YelligoApplication;
-import com.goalsr.homequarantineTracker.apiservice.ApiBackGround;
 import com.goalsr.homequarantineTracker.apiservice.NetworkService;
 import com.goalsr.homequarantineTracker.base.BaseActivity;
 import com.goalsr.homequarantineTracker.dialog.CustomDialogDistance;
@@ -48,7 +45,6 @@ import com.goalsr.homequarantineTracker.resposemodel.ReqTrailer;
 import com.goalsr.homequarantineTracker.resposemodel.emergency.ReqBodyEmergency;
 import com.goalsr.homequarantineTracker.resposemodel.emergency.ReqEmegency;
 import com.goalsr.homequarantineTracker.resposemodel.emergency.ResEmergency;
-import com.goalsr.homequarantineTracker.tracker.MyWorkerLocationService;
 import com.google.android.gms.location.FusedLocationProviderClient;
 import com.google.android.gms.location.LocationCallback;
 import com.google.android.gms.location.LocationRequest;
@@ -61,7 +57,6 @@ import com.google.android.material.snackbar.Snackbar;
 import java.io.File;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.concurrent.TimeUnit;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -370,7 +365,7 @@ public class DasBoardWorkmanger extends BaseActivity {
                             String path = cursor.getString(column_index_data);
                             cursor.close();
 
-                            String IMAGE_NAME = PreferenceStore.getPrefernceHelperInstace().getString(YelligoApplication.getContext(), PreferenceStore.USER_ID) + "_" + System.currentTimeMillis() + "_" + "selfi" + ".png";
+                            String IMAGE_NAME = PreferenceStore.getPrefernceHelperInstace().getString(YelligoApplication.getContext(), PreferenceStore.CITIZEN_ID) + "_" + System.currentTimeMillis() + "_" + "selfi" + ".png";
                             if (isImageSupported(path)) {
                                 compressImage(path, IMAGE_NAME, getFilename(IMAGE_NAME));
                             } else {
@@ -585,7 +580,7 @@ public class DasBoardWorkmanger extends BaseActivity {
         ReqBodyEmergency reqBodyEmergency=new ReqBodyEmergency();
         reqBodyEmergency.setLatitude(PreferenceStore.getPrefernceHelperInstace().getString(YelligoApplication.getContext(),PreferenceStore.USER_LONGITUDE));
         reqBodyEmergency.setLongitude(PreferenceStore.getPrefernceHelperInstace().getString(YelligoApplication.getContext(),PreferenceStore.USER_LONGITUDE));
-        //reqBodyEmergency.setUserId(PreferenceStore.getPrefernceHelperInstace().getString(YelligoApplication.getContext(),PreferenceStore.USER_ID));
+        //reqBodyEmergency.setUserId(PreferenceStore.getPrefernceHelperInstace().getString(YelligoApplication.getContext(),PreferenceStore.CITIZEN_ID));
         reqBodyEmergency.setQuarantineStatus("3");
         reqEmegency.setBody(reqBodyEmergency);
         reqEmegency.setHeader(new ReqHeader());

@@ -11,6 +11,7 @@ import android.provider.Settings;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.lifecycle.ViewModelProviders;
 
 import com.airbnb.lottie.LottieAnimationView;
 import com.goalsr.homequarantineTracker.R;
@@ -22,6 +23,8 @@ import com.goalsr.homequarantineTracker.apiservice.ApiBackGround;
 import com.goalsr.homequarantineTracker.db.repository.PatientFamilyinfoRepository;
 import com.goalsr.homequarantineTracker.db.repository.PatientinfoRepository;
 import com.goalsr.homequarantineTracker.db.repository.TravelTrackingRepository;
+import com.goalsr.homequarantineTracker.db.viewmodel.PatientFamilyViewmodel;
+import com.goalsr.homequarantineTracker.db.viewmodel.PatientViewmodel;
 import com.goalsr.homequarantineTracker.networkconnectivity.NetworkIdentityListener;
 
 
@@ -38,6 +41,9 @@ public abstract class BaseActivity extends AppCompatActivity implements NetworkI
 
     private Dialog dialogProgress;
     private LottieAnimationView lottieAnimationView;
+
+    private PatientViewmodel patientViewmodel;
+    private PatientFamilyViewmodel patientfamilyViewmodel;
 
     @Override
     protected void attachBaseContext(Context newBase) {
@@ -57,6 +63,16 @@ public abstract class BaseActivity extends AppCompatActivity implements NetworkI
         patientFamilyinfoRepository=new PatientFamilyinfoRepository(mContext);
         dialogProgress = DialogManager.getProgressDialog(mContext);
         lottieAnimationView = dialogProgress.findViewById(R.id.lottie_cdp);
+        patientViewmodel=ViewModelProviders.of(this).get(PatientViewmodel.class);
+        patientfamilyViewmodel=ViewModelProviders.of(this).get(PatientFamilyViewmodel.class);
+    }
+
+    public PatientViewmodel  getPatientViewmodel(){
+        return patientViewmodel;
+    }
+
+    public PatientFamilyViewmodel  getPatienFamillytViewmodel(){
+        return patientfamilyViewmodel;
     }
 
     public Dialog getDialogProgress() {

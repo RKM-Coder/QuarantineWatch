@@ -51,6 +51,10 @@ public class PatientinfoRepository {
         return mDao.getListAllItemByAdmin();
     }
 
+    public LiveData<List<ResPatientInfo>> getListAllItemByAdminLivedata(){
+        return mDao.getListAllItemByAdminLivedata();
+    }
+
    /* public List<String> getTravelListNonSyncImage(){
         return mDao.getListAllItemNonSyncImage(false);
     }*/

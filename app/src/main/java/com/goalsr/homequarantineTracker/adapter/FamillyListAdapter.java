@@ -83,7 +83,11 @@ public class FamillyListAdapter extends RecyclerView.Adapter<FamillyListAdapter.
 
     @Override
     public int getItemCount() {
-        return listString.size();
+        if (listString != null) {
+            return listString.size();
+        } else {
+            return 0;
+        }
     }
 
     public void setListener(CheckedListener listener) {

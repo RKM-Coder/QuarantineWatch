@@ -80,7 +80,7 @@ public class MyWorkerLocationService extends Worker {
 		super(context, workerParams);
 		mContext = context;
 		apiBackGround=new ApiBackGround(mContext);
-		//userID= PreferenceStore.getPrefernceHelperInstace().getString(mContext,PreferenceStore.USER_ID);
+		//userID= PreferenceStore.getPrefernceHelperInstace().getString(mContext,PreferenceStore.CITIZEN_ID);
 		travelTrackingRepository =new TravelTrackingRepository(context);
 	}
 
