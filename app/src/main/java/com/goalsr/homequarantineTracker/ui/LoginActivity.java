@@ -152,12 +152,16 @@ public class LoginActivity extends BaseActivity {
                     if (response instanceof ResGvtValidOtp) {
                         if (((ResGvtValidOtp) response).getStatuscode() == 200) {
                             if (((ResGvtValidOtp) response).isStatus()) {
-                                PreferenceStore.getPrefernceHelperInstace().setIntValue(YelligoApplication.getContext(), PreferenceStore.ROLL_ID, ((ResGvtValidOtp) response).getRoleId());
-                                Toast.makeText(getApplicationContext(), "The verification code has been sent to your mobile number.", Toast.LENGTH_LONG).show();
-                                Intent i = new Intent(getApplicationContext(), OtpCheckerActivity.class);
-                                i.putExtra("MobNumber", etPhoneNum.getText().toString());
-                                i.putExtra("rollid", ((ResGvtValidOtp) response).getRoleId());
-                                startActivity(i);
+                                if (((ResGvtValidOtp) response).getRoleId()==1) {
+                                    PreferenceStore.getPrefernceHelperInstace().setIntValue(YelligoApplication.getContext(), PreferenceStore.ROLL_ID, ((ResGvtValidOtp) response).getRoleId());
+                                    Toast.makeText(getApplicationContext(), "The verification code has been sent to your mobile number.", Toast.LENGTH_LONG).show();
+                                    Intent i = new Intent(getApplicationContext(), OtpCheckerActivity.class);
+                                    i.putExtra("MobNumber", etPhoneNum.getText().toString());
+                                    i.putExtra("rollid", ((ResGvtValidOtp) response).getRoleId());
+                                    startActivity(i);
+                                }else{
+                                    Toast.makeText(getApplicationContext(), "This App to be used only by the quarantined person. Please login to officer's App", Toast.LENGTH_LONG).show();
+                                }
                             } else {
                                 Toast.makeText(getApplicationContext(), "Please Try Again", Toast.LENGTH_LONG).show();
                             }

@@ -757,7 +757,7 @@
                         android:layout_height="48dp"
                         android:layout_margin="25dp"
                         android:background="@drawable/btn_background"
-                        android:text="Add "
+                        android:text="Submit"
                         android:textAllCaps="false"
                         android:textColor="@color/btn_txt_color"
                         android:textSize="20sp" />

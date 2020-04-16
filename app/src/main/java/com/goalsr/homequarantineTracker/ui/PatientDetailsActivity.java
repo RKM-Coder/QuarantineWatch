@@ -830,6 +830,8 @@ public class PatientDetailsActivity extends BaseActivity implements DatePickerFr
             resPatientInfo.setHeartIssue(isheartdisses);
             resPatientInfo.setHIV(ishiv);
 
+            resPatientInfo.setAdditional("Android");
+
             ReqUpdatePatentInfo info = new ReqUpdatePatentInfo();
             info.setPersonDetails(resPatientInfo);
             info.setpSecurity(getCommonApi().getSecurityObject());

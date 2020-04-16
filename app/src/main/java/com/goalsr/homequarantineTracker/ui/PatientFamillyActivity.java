@@ -914,43 +914,49 @@ public class PatientFamillyActivity extends BaseActivity implements DatePickerFr
         if (validation()) {
 
             // if ()
-            resPatientInfo = new ResPatientFamilyInfo();
+            ResPatientFamilyInfo resPatientInfoupdate = new ResPatientFamilyInfo();
             showProgressDialogStatic();
-            resPatientInfo.setName(etCustomerName.getText().toString());
-            resPatientInfo.setMobile(etCustomerMobile.getText().toString());
-            resPatientInfo.setEmail(etCustomerEmail.getText().toString());
+            resPatientInfoupdate.setName(etCustomerName.getText().toString());
+            resPatientInfoupdate.setMobile(etCustomerMobile.getText().toString());
+            resPatientInfoupdate.setEmail(etCustomerEmail.getText().toString());
             if (!etAge.getText().toString().equalsIgnoreCase("")) {
-                resPatientInfo.setAge(Integer.parseInt(etAge.getText().toString()));
+                resPatientInfoupdate.setAge(Integer.parseInt(etAge.getText().toString()));
             }
-            resPatientInfo.setGenID(selectedgender);
-            resPatientInfo.setRelationId(selectedrelation);
-            resPatientInfo.setCitizenID(resPatientInfobasic.getCitizenID());
-            resPatientInfo.setURoleBy(resPatientInfobasic.getCitizenID());
-            resPatientInfo.setCitizenFamilyPersonId(0);
-            resPatientInfo.setDOA(startdate);
-            resPatientInfo.setDateQurantine(enddate);
-            resPatientInfo.setPOOrigin(etPoorigin.getText().toString());
-            resPatientInfo.setPoArrival(etPoarrival.getText().toString());
-            resPatientInfo.setHNo(etHouseno.getText().toString());
-            resPatientInfo.setBuilding(etBuilding.getText().toString());
-            resPatientInfo.setStreet(etStreet.getText().toString());
-            resPatientInfo.setCity(etCity.getText().toString());
-            resPatientInfo.setDistrictCode(district_code);
-            resPatientInfo.setTalukCode(taluk_code);
+            resPatientInfoupdate.setGenID(selectedgender);
+            resPatientInfoupdate.setRelationId(selectedrelation);
+            resPatientInfoupdate.setCitizenID(resPatientInfobasic.getCitizenID());
+            resPatientInfoupdate.setURoleBy(resPatientInfobasic.getCitizenID());
+
+                resPatientInfoupdate.setCitizenFamilyPersonId(selctedidfamily);
+
+            resPatientInfoupdate.setDOA(startdate);
+            resPatientInfoupdate.setDateQurantine(enddate);
+            resPatientInfoupdate.setPOOrigin(etPoorigin.getText().toString());
+            resPatientInfoupdate.setPoArrival(etPoarrival.getText().toString());
+            resPatientInfoupdate.setHNo(etHouseno.getText().toString());
+            resPatientInfoupdate.setBuilding(etBuilding.getText().toString());
+            resPatientInfoupdate.setStreet(etStreet.getText().toString());
+            resPatientInfoupdate.setCity(etCity.getText().toString());
+            resPatientInfoupdate.setDistrictCode(district_code);
+            resPatientInfoupdate.setTalukCode(taluk_code);
+            resPatientInfoupdate.setLatitude(mLocation.getLatitude());
+            resPatientInfoupdate.setLongitude(mLocation.getLongitude());
 
 
             //info symtom
-            resPatientInfo.setFever(isfever);
-            resPatientInfo.setCoughSourThroat(iscoughandsour);
-            resPatientInfo.setBreathingProblem(isbreathing);
-            resPatientInfo.setDiarrhea(isdiarria);
-            resPatientInfo.setDiabetes(isdiabaties);
-            resPatientInfo.setHypertension(ishypertense);
-            resPatientInfo.setHeartIssue(isheartdisses);
-            resPatientInfo.setHIV(ishiv);
+            resPatientInfoupdate.setFever(isfever);
+            resPatientInfoupdate.setCoughSourThroat(iscoughandsour);
+            resPatientInfoupdate.setBreathingProblem(isbreathing);
+            resPatientInfoupdate.setDiarrhea(isdiarria);
+            resPatientInfoupdate.setDiabetes(isdiabaties);
+            resPatientInfoupdate.setHypertension(ishypertense);
+            resPatientInfoupdate.setHeartIssue(isheartdisses);
+            resPatientInfoupdate.setHIV(ishiv);
+
+            resPatientInfoupdate.setAdditional("android");
 
             ReqUpdatePatentIFamilynfo info = new ReqUpdatePatentIFamilynfo();
-            info.setFamilyDetails(resPatientInfo);
+            info.setFamilyDetails(resPatientInfoupdate);
             info.setpSecurity(getCommonApi().getSecurityObject());
 
             networkService.addpatentfamillyInfo(info, new NetworkService.NetworkServiceListener() {
@@ -973,8 +979,8 @@ public class PatientFamillyActivity extends BaseActivity implements DatePickerFr
                     if (response instanceof ResUpdateInfo) {
                         //getPatientinfoRepository().update(resPatientInfo);
                         if (((ResUpdateInfo) response).getFamilypersonId() != 0) {
-                            resPatientInfo.setCitizenFamilyPersonId(((ResUpdateInfo) response).getFamilypersonId());
-                            getPatientFamillyinfoRepository().insert(resPatientInfo);
+                            resPatientInfoupdate.setCitizenFamilyPersonId(((ResUpdateInfo) response).getFamilypersonId());
+                            getPatientFamillyinfoRepository().insert(resPatientInfoupdate);
                         /*PreferenceStore.getPrefernceHelperInstace().setFlag(YelligoApplication.getContext(),PreferenceStore.ISUPDATEPATENTINFO,true);
                         Intent intent = new Intent(getApplicationContext(), HomeMainActivity.class);
                         intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_NEW_TASK);
@@ -1026,12 +1032,16 @@ public class PatientFamillyActivity extends BaseActivity implements DatePickerFr
             Toast.makeText(YelligoApplication.getContext(), "Please enter Mobile Number", Toast.LENGTH_LONG).show();
             return false;
         }
+
         if (etCustomerMobile.getText().toString().length() != 10) {
             showDialog("Please enter Mobile number");
             return false;
-        } else if (getPatientFamillyinfoRepository().checkIsExist(etCustomerMobile.getText().toString()) != null) {
-            showDialog("This mobile number already exist");
-            return false;
+        }
+        if (selctedidfamily==0) {
+            if (getPatientFamillyinfoRepository().checkIsExist(etCustomerMobile.getText().toString()) != null) {
+                showDialog("This mobile number already exist");
+                return false;
+            }
         }
 
 

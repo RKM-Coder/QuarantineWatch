@@ -17,6 +17,7 @@ import android.os.Build;
 import android.os.Bundle;
 import android.os.Environment;
 import android.provider.MediaStore;
+import android.provider.Settings;
 import android.util.Base64;
 import android.util.Log;
 import android.view.View;
@@ -268,7 +269,7 @@ public class PatientSymtomUpdateActivity extends BaseActivity {
     public void onViewClicked(View view) {
         switch (view.getId()) {
             case R.id.tv_logout:
-                if (value.size() > 0) {
+                if (validation()) {
                     if (key.equalsIgnoreCase("self")) {
                         if (getCommonApi().isInternetAvailable(PatientSymtomUpdateActivity.this)){
                             symtomUpdateSelf();
@@ -284,9 +285,9 @@ public class PatientSymtomUpdateActivity extends BaseActivity {
                         }
 
                     }
-                } else {
+                } /*else {
                     showDialog("Please take photo", false);
-                }
+                }*/
 
 
                 break;
@@ -341,6 +342,25 @@ public class PatientSymtomUpdateActivity extends BaseActivity {
                 helpmethod();
                 break;
         }
+    }
+
+    private boolean validation() {
+        if (mLocation == null) {
+            showDialogLocTry("Unable to fetch location,please on off GPS and try again  ", false);
+            return false;
+        } else {
+            if (mLocation.getLongitude() == 0.0) {
+                showDialogLocTry("Unable to fetch location,please on off GPS and try again  ", false);
+                return false;
+            }
+
+        }
+
+        if (value.size()==0){
+            showDialog("Please take photo", false);
+            return false;
+        }
+        return true;
     }
 
     @Override
@@ -617,8 +637,8 @@ public class PatientSymtomUpdateActivity extends BaseActivity {
         if (shouldProvideRationale) {
             // Log.i(TAG, "Displaying permission rationale to provide additional context.");
             Snackbar.make(
-                    findViewById(R.id.activity_main),
-                    R.string.permission_rationale,
+                    findViewById(R.id.mainlayout),
+                    R.string.permission_rationale_enable,
                     Snackbar.LENGTH_INDEFINITE)
                     .setAction(R.string.ok, new View.OnClickListener() {
                         @Override
@@ -758,7 +778,7 @@ public class PatientSymtomUpdateActivity extends BaseActivity {
 
                 } else {
                     Snackbar.make(
-                            findViewById(R.id.activity_main_rl),
+                            findViewById(R.id.mainlayout),
                             R.string.permission_rationale,
                             Snackbar.LENGTH_INDEFINITE)
                             .setAction(R.string.ok, new View.OnClickListener() {
@@ -945,6 +965,70 @@ public class PatientSymtomUpdateActivity extends BaseActivity {
         }
     }
 
+    private void showDialogLocTry(String message, boolean b) {
+        if (!isFinishing()) {
+            CustomDialogGeneric dialog = new CustomDialogGeneric(PatientSymtomUpdateActivity.this, "",
+                    new CustomDialogGeneric.OnButtonClickListener() {
+                        @Override
+                        public void onLeftButtonClick(CustomDialogGeneric dialog) {
+                            dialog.dismiss();
+
+                            //dialog.dismiss();
+                        }
+
+                        @Override
+                        public void onRightButtonClick(CustomDialogGeneric dialog, String notes) {
+                            dialog.dismiss();
+                            if (b) {
+                                //TODO check Location
+                                if (!checkPermissionAvl()) {
+                                    showRationaleDialog();
+                                }else {
+                                    new GpsUtils(PatientSymtomUpdateActivity.this).turnGPSOn(new GpsUtils.onGpsListener() {
+                                        @Override
+                                        public void gpsStatus(boolean isGPSEnable) {
+                                            // turn on GPS
+                                            AppConstants.isGPS = isGPSEnable;
+                                            getCurrentLOc();
+                                        }
+                                    });
+                                }
+
+                            }
+
+                        }
+
+
+                    });
+            dialog.setCancelable(false);
+            dialog.setRightButtonText("Retry");
+            dialog.setRightButtonVisibility(View.VISIBLE);
+            dialog.setLeftButtonVisibility(View.VISIBLE);
+            dialog.setLeftButtonText("Cancel");
+            dialog.setDialogType(CustomDialogGeneric.TYPE_ALERT);
+            dialog.setDescription("" + message);
+            dialog.show();
+        }
+    }
+
+    public void showRationaleDialog() {
+        Snackbar.make(findViewById(R.id.mainlayout),
+                "Please Grant Permissions To Use The App",
+                Snackbar.LENGTH_INDEFINITE).setAction("ENABLE",
+                new View.OnClickListener() {
+                    @RequiresApi(api = Build.VERSION_CODES.M)
+                    @Override
+                    public void onClick(View v) {
+
+                        Intent intent = new Intent();
+                        intent.setAction(Settings.ACTION_APPLICATION_DETAILS_SETTINGS);
+                        Uri uri = Uri.fromParts("package", getPackageName(), null);
+                        intent.setData(uri);
+                        startActivity(intent);
+                    }
+                }).show();
+    }
+
 
     private void captureImpl() {
 
@@ -952,6 +1036,7 @@ public class PatientSymtomUpdateActivity extends BaseActivity {
     }
 
     private void symtomUpdateSelf() {
+
         showProgressDialogStatic();
         int ciD=PreferenceStore.getPrefernceHelperInstace().getIntValue(YelligoApplication.getContext(),PreferenceStore.CITIZEN_ID);
         ReqGvtPatientSymptom reqGvtPatientSymptom = new ReqGvtPatientSymptom();

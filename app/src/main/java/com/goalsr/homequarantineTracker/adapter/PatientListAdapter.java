@@ -115,7 +115,8 @@ public class PatientListAdapter extends RecyclerView.Adapter<PatientListAdapter.
 
     public void setValue(ArrayList<ResPatientInfo> list){
         this.listString.clear();
-        this.listString.addAll(list);
+        this.listmain.clear();
+        //this.listString.addAll(list);
         this.listmain.addAll(list);
 //        Log.e("PatientList--",listString.size()+"");
         notifyDataSetChanged();
@@ -133,13 +134,14 @@ public class PatientListAdapter extends RecyclerView.Adapter<PatientListAdapter.
                     ArrayList<ResPatientInfo> filteredList = new ArrayList<>();
                     for (ResPatientInfo row : listmain) {
 
-                        if (row.getName()!=null) {
+                        if (row.getName()!=null || row.getMobile()!=null) {
 
-                            if (row.getName().toLowerCase().contains(charString.toLowerCase())) {
+                            if (row.getName().toLowerCase().contains(charString.toLowerCase()) || row.getMobile().contains(charString)) {
                                 filteredList.add(row);
 
                             }
                         }
+
                     }
 
                     listString = filteredList;
