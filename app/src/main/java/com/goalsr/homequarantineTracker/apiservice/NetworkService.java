@@ -139,11 +139,17 @@ public class NetworkService {
                 if (response.isSuccessful()) {
 
                     if (listener != null) {
-                        if (response.body().getStatuscode()==200) {
-                            listener.onSuccess(response.body(), true);
-                        } else {
-                            listener.onFailure(response.body());
-                        }
+                        /*ResGvtValidOtpValid objectreturn=new Gson().fromJson(response.body().toString(),ResGvtValidOtpValid.class);
+                        if (objectreturn!=null) {*/
+                            if (response.body().getStatuscode() == 200) {
+                                listener.onSuccess(response.body(), true);
+                            } else {
+                                listener.onFailure(response.body());
+                            }
+                        /*}else {
+                            ResGvtValidOtpValid loginResponse = new ResGvtValidOtpValid();
+                            listener.onFailure(makeErrorResponse(loginResponse, "Wrong response"));
+                        }*/
 
                     }
 

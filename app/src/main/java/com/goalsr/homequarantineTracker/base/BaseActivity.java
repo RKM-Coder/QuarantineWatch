@@ -16,6 +16,7 @@ import androidx.lifecycle.ViewModelProviders;
 import com.airbnb.lottie.LottieAnimationView;
 import com.goalsr.homequarantineTracker.R;
 import com.goalsr.homequarantineTracker.Utils.CommonApi;
+import com.goalsr.homequarantineTracker.Utils.DeviceUtill;
 import com.goalsr.homequarantineTracker.Utils.DialogManager;
 import com.goalsr.homequarantineTracker.Utils.PreferenceStore;
 import com.goalsr.homequarantineTracker.YelligoApplication;
@@ -123,12 +124,32 @@ public abstract class BaseActivity extends AppCompatActivity implements NetworkI
 
             AlertDialog alert = alertBuilder.create();
             alert.show();
-        }else {
-
+        }else if (new DeviceUtill().isDeviceRooted(YelligoApplication.getContext())){
+            showAlertDialogAndExitApp("This device is rooted. You can't use this app.");
         }
        /* ApiBackGround apiBackGround=new ApiBackGround(YelligoApplication.getContext());
         apiBackGround.uploadsync(false);*/
 
+    }
+
+    public void showAlertDialogAndExitApp(String message) {
+
+        AlertDialog alertDialog = new AlertDialog.Builder(this).create();
+        alertDialog.setTitle("Alert");
+        alertDialog.setMessage(message);
+        alertDialog.setButton(AlertDialog.BUTTON_NEUTRAL, "OK",
+                new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int which) {
+                        dialog.dismiss();
+                        Intent intent = new Intent(Intent.ACTION_MAIN);
+                        intent.addCategory(Intent.CATEGORY_HOME);
+                        intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                        startActivity(intent);
+                        finish();
+                    }
+                });
+
+        alertDialog.show();
     }
 
 

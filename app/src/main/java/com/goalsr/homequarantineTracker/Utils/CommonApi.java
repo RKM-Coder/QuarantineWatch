@@ -269,8 +269,11 @@ public class CommonApi {
 
     public SecurityObject getSecurityObject(){
         SecurityObject securityObject =new SecurityObject();
-        securityObject.setPassPhrase("BhoomiApI@123#=");
-        securityObject.setUName("BhoomiApI");
+        securityObject.setPassPhrase(BuildConfig.BUILD_STATIC_PASS);
+        securityObject.setUName(BuildConfig.BUILD_STATIC_USERNAME);
+
+        /*securityObject.setPassPhrase("BhoomiApI@123#=");
+        securityObject.setUName("BhoomiApI");*/
 
         return securityObject;
     }

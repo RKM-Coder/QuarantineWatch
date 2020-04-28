@@ -1,6 +1,9 @@
 apply plugin: 'com.android.application'
 apply plugin: 'com.google.gms.google-services'
 apply plugin: 'com.google.firebase.crashlytics'
+def apikeyPropertiesFile = rootProject.file("apikey.properties")
+def apikeyProperties = new Properties()
+apikeyProperties.load(new FileInputStream(apikeyPropertiesFile))
 android {
     compileSdkVersion 29
     buildToolsVersion "29.0.2"
@@ -12,6 +15,10 @@ android {
         versionName "1.0"
         multiDexEnabled true
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        buildConfigField("String", "BUILD_URL", apikeyProperties['BUILD_URL'])
+        buildConfigField("String", "BUILD_URL_IMAGE", apikeyProperties['BUILD_URL_IMAGE'])
+        buildConfigField("String", "BUILD_STATIC_USERNAME", apikeyProperties['BUILD_STATIC_USERNAME'])
+        buildConfigField("String", "BUILD_STATIC_PASS", apikeyProperties['BUILD_STATIC_PASS'])
     }
     buildTypes {
         release {

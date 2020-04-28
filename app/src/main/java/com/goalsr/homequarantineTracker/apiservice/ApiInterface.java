@@ -35,13 +35,92 @@ import retrofit2.http.Query;
 
 public interface ApiInterface {
 
-    /*@Headers({"Accept: application/json", "Content-Type: application/json"})
-    @POST("/mobileApi/login/")
-    Call<LoginResponse> makeAppLoggin(@Body LoginRequest request);*/
-    //@Headers({"Accept: application/json", "Content-Type: application/json"})
+    @Headers({"Accept: application/json", "Content-Type: application/json"})
+    @POST("api/Values/ValidateOTP")
+    Call<ResGvtValidOtpValid> makeOtpValidReq(
+            @Body ReqOtpValidGvt request
+    );
+
+    @Headers({"Accept: application/json", "Content-Type: application/json"})
+    @POST("api/Values/getCitizenMasterMobileOnly")
+    Call<List<ResPatientInfo>> getPAtientInfo(
+            @Body ReqPatient request
+    );
+
+    @Headers({"Accept: application/json", "Content-Type: application/json"})
+    @POST("api/Values/getCitizenMasterByDistrict")
+    Call<List<ResPatientInfoByAdmin>> getPAtientInfoListByAdmin(
+            @Body ReqPAtientInfoByAdmin request
+    );
+
+    @Headers({"Accept: application/json", "Content-Type: application/json"})
+    @POST("api/Values/getCitizenFamilyMember")
+    Call<List<ResPatientFamilyInfo>> getPAtientFamilyInfo(
+            @Body ReqPatient request
+    );
+
+    @Headers({"Accept: application/json", "Content-Type: application/json"})
+    @POST("api/Values/UpdateCitizenSymptomNumber")
+    Call<List<ResSymtomChecker>> sendpatientSymptom(
+            @Body ReqGvtPatientSymptom request
+    );
+
+    @Headers({"Accept: application/json", "Content-Type: application/json"})
+    @POST("api/Values/UpdateCitizenFamilyPersonSymptomNumber")
+    Call<List<ResSymtomChecker>> sendpatientFamilySymptom(
+            @Body ReqGvtPatientFamillySymptom request
+    );
+
+    @Headers({"Accept: application/json", "Content-Type: application/json"})
+    @POST("BHOOMI/Fn_Insert_DOCCHNK/{PSTRUSERNAME}/{PSTRPASSWORD}/")
+    Call<ResImage> sendprofileImage(
+            @Body ReqImageChunk request,
+            @Path ("PSTRUSERNAME") String PSTRUSERNAME,
+            @Path ("PSTRPASSWORD") String PSTRPASSWORD
+    );
+
+    @Headers({"Accept: application/json", "Content-Type: application/json"})
+    @POST("api/Values/InsertUpdateCitizenMaster")
+    Call<List<ResUpdateInfo>> updatePAtientInfo(
+            @Body ReqUpdatePatentInfo request
+    );
+
+    @Headers({"Accept: application/json", "Content-Type: application/json"})
+    @POST("api/Values/InsertUpdateCitizenFamily")
+    Call<List<ResUpdateInfo>> updatePAtientFamillyInfo(
+            @Body ReqUpdatePatentIFamilynfo request
+    );
+
+    @Headers({"Accept: application/json", "Content-Type: application/json"})
+    @POST("/quarantine-api/user/track")
+    Call<ResTracker> makeTraker(
+            @Body ReqStatus request
+    );
+
+    @Headers({"Accept: application/json", "Content-Type: application/json"})
+    @POST("/quarantine-api/user/insertNotification")
+    Call<ResEmergency> makeEmergencyTraker(
+            @Body ReqEmegency request
+    );
+
 
 
     @Headers({"Accept: application/json", "Content-Type: application/json"})
+    @PUT("/quarantine-api/user/updateUserQuarantineStatus")
+    Call<JsonElement> makeEmergencyTrakerinside(
+            @Body ReqEmegency request
+    );
+
+    /*GVT API
+     * */
+
+    @GET("api/Values/GetOTP")
+    Call<ResGvtValidOtp> makeOtpReqGOVT(
+            @Query("pPmobileNo") String mobileNo
+    );
+
+
+    /*@Headers({"Accept: application/json", "Content-Type: application/json"})
     @POST("/api/Values/ValidateOTP")
     Call<ResGvtValidOtpValid> makeOtpValidReq(
             @Body ReqOtpValidGvt request
@@ -117,13 +196,13 @@ public interface ApiInterface {
             @Body ReqEmegency request
     );
 
-    /*GVT API
-    * */
+    *//*GVT API
+    * *//*
 
     @GET("/api/Values/GetOTP")
     Call<ResGvtValidOtp> makeOtpReqGOVT(
             @Query("pPmobileNo") String mobileNo
-    );
+    );*/
 
 
 
